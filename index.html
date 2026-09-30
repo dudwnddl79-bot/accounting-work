@@ -390,7 +390,7 @@ var SUMMARY=[
   {ord:80,date:"수시",name:"측정키트 구매(증설)",img:"yakpoom_kit_up.jpg",적요:"실험샘플 측정키트 외-증설",pjt:"BBW1003",acct:"시험분석비-시약초자 (5125001)",chk:"비정산"},
   {ord:81,date:"수시",name:"앤탈로 임차료(구미 현장)",img:"jeondo_used_gumi_aug.png",적요:"구미 현장 컨테이너 사무실 임차료",pjt:"BBW1002",acct:"지급임차료-앤탈로 (5110107) / 전도금 처리",chk:"비정산"},
   {ord:82,date:"수시",name:"사무실 관리비(김천)",img:"jeondo_used_gimcheon_aug.png",적요:"김천 사무실 관리비",pjt:"BBW1004",acct:"지급임차료-부동산 (5110102) / 전도금 처리",chk:"비정산"},
-  {ord:83,date:"수시",name:"안전장비 구매(구미)",img:"anjeon_gume.png",적요:"안전장비 구매-해당 현장",pjt:"BBW1002",acct:"안전관리비-일반 (5129001) / 소액자금본사 또는 전도금",chk:"비정산"},
+  {ord:83,date:"수시",name:"안전장비 구매(구미)",img:"anjeon_gume.png",적요:"안전장비 구매-해당 현장",pjt:"BBW1003",acct:"안전관리비-일반 (5129001) / 소액자금본사 또는 전도금",chk:"비정산"},
   {ord:84,date:"수시",name:"안전장비(가스검지기 외)",img:"anjeon_gas.png",적요:"안전장비 구매-가스검지기",pjt:"BBW1002",acct:"안전관리비-일반 (5129001) / 소액자금본사 또는 전도금",chk:"비정산"},
   {ord:85,date:"수시",name:"안전장비(안전그네 외)",img:"anjeon_terik.png",적요:"안전장비 구매-안전그네",pjt:"BBW1002",acct:"안전관리비-일반 (5129001) / 소액자금본사 또는 전도금",chk:"비정산"},
   {ord:86,date:"수시",name:"복합기 임차료",img:"copier_lease.png",적요:"복합기 임차료",pjt:"BBW1002/1004",acct:"단기리스료 비품",chk:"비정산"}
@@ -782,59 +782,64 @@ var CC_BIKMOK={
   BBW1004:['제경비-비정산','수선유지비-비정산','분석비-비정산','유형자산비-비정산','전력비-정산','약품비-정산','폐기물처리비-정산','외주용역비-정산','별도정산-정산','계약 외-비정산']
 };
 var DEFAULT_FORMS=[
-  {type:'kita',kita:'arap',title:'N월 Utility사용료 진행매출 상계_구미',_default:true,fields:{'f-jeokyo-header':'N월 Utility사용료 진행매출 상계_구미','f-arap-cc':'BBW1002','f-arap-ccn':'(민간)구미코오롱폐수',_rows:[]}},
-  {type:'kita',kita:'arap',title:'N월 Utility사용료 진행매출 상계_구미증설',_default:true,fields:{'f-jeokyo-header':'N월 Utility사용료 진행매출 상계_구미증설','f-arap-cc':'BBW1003','f-arap-ccn':'(민간)구미코오롱폐수(증설)',_rows:[]}},
-  {type:'kita',kita:'arap',title:'N월 Utility사용료 진행매출 상계_김천',_default:true,fields:{'f-jeokyo-header':'N월 Utility사용료 진행매출 상계_김천','f-arap-cc':'BBW1004','f-arap-ccn':'(민간)김천코오롱폐수',_rows:[]}},
-  {type:'chaekwon',title:'위탁운영비 청구_구미',_default:true,fields:{'f-jptype':'일반매출','f-taxcode':'AA매출-세금계산서-전자증빙(10%)','f-ca':'외상매출금-원화','f-dept':'BBW1002','f-deptn':'(민간)구미코오롱폐수',_rows:[{'f-acct-code':'4011100','f-acct-name':'국내O&M사업수입','f-jeokyo':'위탁운영비 청구_구미','f-cc':'BBW1002','f-prg':'일반예산','f-taxnm':'AA매출-세금계산서-전자증빙(10%)','f-supply':'','f-vat':''}]}},
-  {type:'chaekwon',title:'위탁운영비 청구_구미증설',_default:true,fields:{'f-jptype':'일반매출','f-taxcode':'AA매출-세금계산서-전자증빙(10%)','f-ca':'외상매출금-원화','f-dept':'BBW1003','f-deptn':'(민간)구미코오롱폐수(증설)',_rows:[{'f-acct-code':'4011100','f-acct-name':'국내O&M사업수입','f-jeokyo':'위탁운영비 청구_구미증설','f-cc':'BBW1003','f-prg':'일반예산','f-taxnm':'AA매출-세금계산서-전자증빙(10%)','f-supply':'','f-vat':''}]}},
-  {type:'chaekwon',title:'위탁운영비 청구_김천(1공장)',_default:true,fields:{'f-jptype':'일반매출','f-taxcode':'AA매출-세금계산서-전자증빙(10%)','f-ca':'외상매출금-원화','f-buyer':'코오롱인더스트리(주)김천공장','f-dept':'BBW1004','f-deptn':'(민간)김천코오롱폐수',_rows:[{'f-acct-code':'4011100','f-acct-name':'국내O&M사업수입','f-jeokyo':'위탁운영비 청구_김천(1공장)','f-cc':'BBW1004','f-prg':'일반예산','f-taxnm':'AA매출-세금계산서-전자증빙(10%)','f-supply':'','f-vat':''}]}},
-  {type:'chaekwon',title:'위탁운영비 청구_김천(3공장)',_default:true,fields:{'f-jptype':'일반매출','f-taxcode':'AA매출-세금계산서-전자증빙(10%)','f-ca':'외상매출금-원화','f-buyer':'코오롱인더스트리(주) 김천3공장','f-dept':'BBW1004','f-deptn':'(민간)김천코오롱폐수',_rows:[{'f-acct-code':'4011100','f-acct-name':'국내O&M사업수입','f-jeokyo':'위탁운영비 청구_김천(3공장)','f-cc':'BBW1004','f-prg':'일반예산','f-taxnm':'AA매출-세금계산서-전자증빙(10%)','f-supply':'','f-vat':''}]}},
-  {type:'tax',title:'N월 식대_구미',_default:true,fields:{'f-buyer':'코오롱글로벌(주)FS구미점','f-taxcode':'(VB)세금계산서(10%)','f-dept':'BBW1002','f-deptn':'(민간)구미코오롱폐수',_rows:[{'f-acct-code':'5105110','f-acct-name':'(원)복리후생비-식대보조','f-jeokyo':'N월 식대','f-cc':'BBW1002','f-prg':'일반예산_비정산','f-taxnm':'(VB)세금계산서(10%)','f-supply':'','f-vat':'','f-bikmok':'제경비-비정산'}]}},
-  {type:'tax',title:'N월 식대_구미증설',_default:true,fields:{'f-buyer':'코오롱글로벌(주)FS구미점','f-taxcode':'(VB)세금계산서(10%)','f-dept':'BBW1003','f-deptn':'(민간)구미코오롱폐수(증설)',_rows:[{'f-acct-code':'5105110','f-acct-name':'(원)복리후생비-식대보조','f-jeokyo':'N월 식대','f-cc':'BBW1003','f-prg':'일반예산_비정산','f-taxnm':'(VB)세금계산서(10%)','f-supply':'','f-vat':'','f-bikmok':'제경비-비정산'}]}},
-  {type:'tax',title:'N월 식대_김천',_default:true,fields:{'f-buyer':'코오롱글로벌(주)FS김천1점','f-taxcode':'(VB)세금계산서(10%)','f-dept':'BBW1004','f-deptn':'(민간)김천코오롱폐수',_rows:[{'f-acct-code':'5105110','f-acct-name':'(원)복리후생비-식대보조','f-jeokyo':'N월 식대','f-cc':'BBW1004','f-prg':'일반예산_비정산','f-taxnm':'(VB)세금계산서(10%)','f-supply':'','f-vat':'','f-bikmok':'제경비-비정산'}]}},
-  {type:'tax',title:'코웨이 정수기 렌탈료_구미',_default:true,fields:{'f-buyer':'코웨이(주)','f-taxcode':'(VB)세금계산서(10%)','f-dept':'BBW1002','f-deptn':'(민간)구미코오롱폐수',_rows:[{'f-jeokyo':'코웨이 정수기 렌탈료_구미','f-cc':'BBW1002','f-prg':'일반예산_비정산','f-taxnm':'(VB)세금계산서(10%)','f-supply':'','f-vat':'','f-bikmok':'계약 외-비정산'}]}},
-  {type:'tax',title:'청소용역비_구미',_default:true,fields:{'f-taxcode':'(VB)세금계산서(10%)','f-dept':'BBW1002','f-deptn':'(민간)구미코오롱폐수',_rows:[{'f-acct-code':'5117006','f-acct-name':'(원)지급수수료-용역비','f-jeokyo':'청소용역비_구미','f-cc':'BBW1002','f-prg':'일반예산_비정산','f-taxnm':'(VB)세금계산서(10%)','f-supply':'','f-vat':'','f-bikmok':'제경비-비정산'}]}},
-  {type:'tax',title:'청소용역비_김천',_default:true,fields:{'f-taxcode':'(VB)세금계산서(10%)','f-dept':'BBW1004','f-deptn':'(민간)김천코오롱폐수',_rows:[{'f-acct-code':'5117006','f-acct-name':'(원)지급수수료-용역비','f-jeokyo':'청소용역비_김천','f-cc':'BBW1004','f-prg':'일반예산_비정산','f-taxnm':'(VB)세금계산서(10%)','f-supply':'','f-vat':'','f-bikmok':'제경비-비정산'}]}},
-  {type:'tax',title:'수질 분석비_구미',_default:true,fields:{'f-taxcode':'(VB)세금계산서(10%)','f-dept':'BBW1002','f-deptn':'(민간)구미코오롱폐수',_rows:[{'f-jeokyo':'수질 분석비_구미','f-cc':'BBW1002','f-prg':'일반예산_비정산','f-taxnm':'(VB)세금계산서(10%)','f-supply':'','f-vat':'','f-bikmok':'분석비-비정산'}]}},
-  {type:'silmool',title:'약품 구매_구미',_default:true,fields:{'f-taxcode':'VI 매입-세금계산서-일반-실물(10%)','f-payacct':'미지급금-일반','f-dept':'BBW1002','f-deptn':'(민간)구미코오롱폐수',_rows:[{'f-jeokyo':'약품 구매_구미','f-cc':'BBW1002','f-prg':'일반예산_정산','f-taxnm':'VI 매입-세금계산서-일반-실물(10%)','f-supply':'','f-vat':'','f-bikmok':'약품비-정산'}]}},
-  {type:'silmool',title:'약품 구매_구미증설',_default:true,fields:{'f-taxcode':'VI 매입-세금계산서-일반-실물(10%)','f-payacct':'미지급금-일반','f-dept':'BBW1003','f-deptn':'(민간)구미코오롱폐수(증설)',_rows:[{'f-jeokyo':'약품 구매_구미증설','f-cc':'BBW1003','f-prg':'일반예산_정산','f-taxnm':'VI 매입-세금계산서-일반-실물(10%)','f-supply':'','f-vat':'','f-bikmok':'약품비-정산'}]}},
-  {type:'silmool',title:'약품 구매_김천',_default:true,fields:{'f-taxcode':'VI 매입-세금계산서-일반-실물(10%)','f-payacct':'미지급금-일반','f-dept':'BBW1004','f-deptn':'(민간)김천코오롱폐수',_rows:[{'f-jeokyo':'약품 구매_김천','f-cc':'BBW1004','f-prg':'일반예산_정산','f-taxnm':'VI 매입-세금계산서-일반-실물(10%)','f-supply':'','f-vat':'','f-bikmok':'약품비-정산'}]}},
-  {type:'silmool',title:'슬러지 처리비_구미',_default:true,fields:{'f-taxcode':'VI 매입-세금계산서-일반-실물(10%)','f-payacct':'미지급금-일반','f-dept':'BBW1002','f-deptn':'(민간)구미코오롱폐수',_rows:[{'f-jeokyo':'슬러지 처리비_구미','f-cc':'BBW1002','f-prg':'일반예산_정산','f-taxnm':'VI 매입-세금계산서-일반-실물(10%)','f-supply':'','f-vat':'','f-bikmok':'폐기물처리비-정산'}]}},
-  {type:'silmool',title:'슬러지 처리비_구미증설',_default:true,fields:{'f-taxcode':'VI 매입-세금계산서-일반-실물(10%)','f-payacct':'미지급금-일반','f-dept':'BBW1003','f-deptn':'(민간)구미코오롱폐수(증설)',_rows:[{'f-jeokyo':'슬러지 처리비_구미증설','f-cc':'BBW1003','f-prg':'일반예산_정산','f-taxnm':'VI 매입-세금계산서-일반-실물(10%)','f-supply':'','f-vat':'','f-bikmok':'폐기물처리비-정산'}]}},
-  {type:'jiro',title:'인터넷 사용료_구미',_default:true,fields:{'f-jiro-issuer':'한국통신','f-jiro-type':'전화/전기/TV','f-buyer':'(주)케이티','f-sbn':'1028142945','f-taxcode':'VI 매입-세금계산서-지로-전자승빙(10%)','f-dept':'BBW1002','f-deptn':'(민간)구미코오롱폐수',_rows:[{'f-acct-code':'5108102','f-acct-name':'(원)통신비-인터넷데이타통신','f-jeokyo':'인터넷 사용료','f-cc':'BBW1002','f-prg':'일반예산_비정산','f-taxnm':'VI 매입-세금계산서-지로-전자승빙(10%)','f-supply':'','f-vat':'','f-bikmok':'제경비-비정산'}]}},
-  {type:'jiro',title:'인터넷 사용료_김천',_default:true,fields:{'f-jiro-issuer':'한국통신','f-jiro-type':'전화/전기/TV','f-buyer':'(주)케이티','f-sbn':'1028142945','f-taxcode':'VI 매입-세금계산서-지로-전자승빙(10%)','f-dept':'BBW1004','f-deptn':'(민간)김천코오롱폐수',_rows:[{'f-acct-code':'5108102','f-acct-name':'(원)통신비-인터넷데이타통신','f-jeokyo':'인터넷 사용료','f-cc':'BBW1004','f-prg':'일반예산_비정산','f-taxnm':'VI 매입-세금계산서-지로-전자승빙(10%)','f-supply':'','f-vat':'','f-bikmok':'제경비-비정산'}]}},
-  {type:'jiro',title:'KT 전화료_구미',_default:true,fields:{'f-jiro-issuer':'한국통신','f-jiro-type':'전화/전기/TV','f-buyer':'(주)케이티','f-sbn':'1028142945','f-taxcode':'VI 매입-세금계산서-지로-전자승빙(10%)','f-dept':'BBW1002','f-deptn':'(민간)구미코오롱폐수',_rows:[{'f-acct-code':'5108101','f-acct-name':'(원)통신비-유선전화','f-jeokyo':'KT 전화료','f-cc':'BBW1002','f-prg':'일반예산_비정산','f-taxnm':'VI 매입-세금계산서-지로-전자승빙(10%)','f-supply':'','f-vat':'','f-bikmok':'제경비-비정산'}]}},
-  {type:'jiro',title:'숙소 가스비_구미(삼도뷰앤빌 106동 903호)',_default:true,fields:{'f-jiro-issuer':'영남에너지','f-jiro-type':'일반지로','f-buyer':'영남에너지서비스(주)','f-taxcode':'VI 매입-세금계산서-지로-전자승빙(10%)','f-dept':'BBW1002','f-deptn':'(민간)구미코오롱폐수',_rows:[{'f-acct-code':'5105104','f-acct-name':'(원)복리후생비-숙소관리비','f-jeokyo':'숙소 가스비 (삼도뷰앤빌 106동 903호)','f-cc':'BBW1002','f-prg':'일반예산_비정산','f-taxnm':'VI 매입-세금계산서-지로-전자승빙(10%)','f-supply':'','f-vat':'','f-bikmok':'제경비-비정산'}]}},
-  {type:'jiro',title:'숙소 전기료_김천(동원미라클 2차 202호)',_default:true,fields:{'f-jiro-issuer':'한국전력','f-jiro-type':'전화/전기/TV','f-buyer':'한국전력공사','f-taxcode':'VI 매입-세금계산서-지로-전자승빙(10%)','f-dept':'BBW1004','f-deptn':'(민간)김천코오롱폐수',_rows:[{'f-acct-code':'5105104','f-acct-name':'(원)복리후생비-숙소관리비','f-jeokyo':'숙소 전기료 (동원미라클 2차 202호)','f-cc':'BBW1004','f-prg':'일반예산_비정산','f-taxnm':'VI 매입-세금계산서-지로-전자승빙(10%)','f-supply':'','f-vat':'','f-bikmok':'제경비-비정산'}]}},
-  {type:'normal',title:'N월 숙소 임차료(삼도뷰앤빌 106동 903호)',_default:true,fields:{'f-buyer':'박진욱','f-hold':'소액자금본사','f-payacct':'미지급금-일반','f-dept':'BBW1002','f-deptn':'(민간)구미코오롱폐수',_rows:[{'f-acct-code':'5110102','f-acct-name':'(원)지급임차료-부동산','f-jeokyo':'N월 숙소 임차료(삼도뷰앤빌 106동 903호)','f-cc':'BBW1002','f-prg':'일반예산_비정산','f-supply':'','f-vat':'0','f-bikmok':'계약 외-비정산'}]}},
-  {type:'normal',title:'N월 숙소 임차료_김천',_default:true,fields:{'f-hold':'소액자금본사','f-payacct':'미지급금-일반','f-dept':'BBW1004','f-deptn':'(민간)김천코오롱폐수',_rows:[{'f-acct-code':'5110102','f-acct-name':'(원)지급임차료-부동산','f-jeokyo':'N월 숙소 임차료_김천','f-cc':'BBW1004','f-prg':'일반예산_비정산','f-supply':'','f-vat':'0','f-bikmok':'계약 외-비정산'}]}},
-  {type:'normal',title:'김천 사무실 관리비',_default:true,fields:{'f-hold':'소액자금본사','f-payacct':'미지급금-일반','f-dept':'BBW1004','f-deptn':'(민간)김천코오롱폐수',_rows:[{'f-acct-code':'5110102','f-acct-name':'(원)지급임차료-부동산','f-jeokyo':'김천 사무실 관리비','f-cc':'BBW1004','f-prg':'일반예산_비정산','f-supply':'','f-vat':'0','f-bikmok':'계약 외-비정산'}]}},
-  {type:'tax',title:'안전장비 구매_구미',_default:true,fields:{'f-buyer':'(주)서브원','f-taxcode':'(VB)세금계산서(10%)','f-payacct':'미지급금-일반','f-dept':'BBW1002','f-deptn':'(민간)구미코오롱폐수',_rows:[{'f-acct-code':'5129001','f-acct-name':'(원)안전관리비-일반','f-jeokyo':'안전장비 구매','f-cc':'BBW1002','f-prg':'일반예산_비정산','f-taxnm':'(VB)세금계산서(10%)','f-supply':'','f-vat':'','f-bikmok':'계약 외-비정산'}]}},
-  {type:'tax',title:'안전장비 구매_구미증설',_default:true,fields:{'f-buyer':'(주)서브원','f-taxcode':'(VB)세금계산서(10%)','f-payacct':'미지급금-일반','f-dept':'BBW1003','f-deptn':'(민간)구미코오롱폐수(증설)',_rows:[{'f-acct-code':'5129001','f-acct-name':'(원)안전관리비-일반','f-jeokyo':'안전장비 구매','f-cc':'BBW1003','f-prg':'일반예산_비정산','f-taxnm':'(VB)세금계산서(10%)','f-supply':'','f-vat':'','f-bikmok':'제경비-비정산'}]}},
-  {type:'kita',kita:'arap',title:'입금 채권 반제_구미',_default:true,fields:{'f-jeokyo-header':'입금 채권 반제_구미','f-arap-cc':'BBW1002','f-arap-ccn':'(민간)구미코오롱폐수',_rows:[]}},
-  {type:'kita',kita:'arap',title:'입금 채권 반제_구미증설',_default:true,fields:{'f-jeokyo-header':'입금 채권 반제_구미증설','f-arap-cc':'BBW1003','f-arap-ccn':'(민간)구미코오롱폐수(증설)',_rows:[]}},
-  {type:'kita',kita:'arap',title:'입금 채권 반제_김천',_default:true,fields:{'f-jeokyo-header':'입금 채권 반제_김천','f-arap-cc':'BBW1004','f-arap-ccn':'(민간)김천코오롱폐수',_rows:[]}},
-  {type:'kita',kita:'jeondo',title:'전도금 정산_구미',_default:true,fields:{'f-jeokyo-header':'전도금 정산_구미','f-jd-cc':'BBW1002','f-jd-ccn':'(민간)구미코오롱폐수',_rows:[]}},
-  {type:'kita',kita:'jeondo',title:'전도금 정산_김천',_default:true,fields:{'f-jeokyo-header':'전도금 정산_김천','f-jd-cc':'BBW1004','f-jd-ccn':'(민간)김천코오롱폐수',_rows:[]}},
-  {type:'jiro',title:'KT 전화료_김천',_default:true,fields:{'f-jiro-issuer':'한국통신','f-jiro-type':'전화/전기/TV','f-buyer':'(주)케이티','f-taxcode':'VI 매입-세금계산서-지로-전자승빙(10%)','f-dept':'BBW1004','f-deptn':'(민간)김천코오롱폐수',_rows:[{'f-acct-code':'5108101','f-acct-name':'(원)통신비-유선전화','f-jeokyo':'KT 전화료','f-cc':'BBW1004','f-prg':'일반예산_비정산','f-taxnm':'VI 매입-세금계산서-지로-전자승빙(10%)','f-supply':'','f-vat':'','f-bikmok':'제경비-비정산'}]}},
-  {type:'tax',title:'복합기 임차료',_default:true,fields:{'f-buyer':'캐논코리아(주)','f-taxcode':'(VB)세금계산서(10%)','f-dept':'BBW1002','f-deptn':'(민간)구미코오롱폐수',_rows:[{'f-acct-code':'5110107','f-acct-name':'(원)지급임차료-렌탈료','f-jeokyo':'복합기 임차료','f-cc':'BBW1002','f-prg':'일반예산_비정산','f-taxnm':'(VB)세금계산서(10%)','f-supply':'','f-vat':'','f-bikmok':'계약 외-비정산'},{'f-acct-code':'5110107','f-acct-name':'(원)지급임차료-렌탈료','f-jeokyo':'복합기 임차료','f-cc':'BBW1004','f-prg':'일반예산_비정산','f-taxnm':'(VB)세금계산서(10%)','f-supply':'','f-vat':'','f-bikmok':'제경비-비정산'}]}},
-  {type:'tax',title:'생수 구매_김천',_default:true,fields:{'f-buyer':'진로명품(진로김천대형)','f-hold':'전도금','f-taxcode':'(VB)세금계산서(10%)','f-dept':'BBW1004','f-deptn':'(민간)김천코오롱폐수',_rows:[{'f-jeokyo':'생수 구매_김천','f-cc':'BBW1004','f-prg':'일반예산_비정산','f-taxnm':'(VB)세금계산서(10%)','f-supply':'','f-vat':'','f-bikmok':'제경비-비정산'}]}},
-  {type:'normal',title:'전파사용료_구미',_default:true,fields:{'f-buyer':'서울전파관리소','f-hold':'전도금','f-payacct':'미지급금-일반','f-dept':'BBW1002','f-deptn':'(민간)구미코오롱폐수',_rows:[{'f-acct-code':'5108105','f-acct-name':'(원)통신비-전파사용료','f-jeokyo':'전파사용료_구미','f-cc':'BBW1002','f-prg':'일반예산_비정산','f-supply':'','f-vat':'0','f-bikmok':'제경비-비정산'}]}},
-  {type:'normal',title:'전파사용료_김천',_default:true,fields:{'f-buyer':'대전전파관리소','f-hold':'전도금','f-payacct':'미지급금-일반','f-dept':'BBW1004','f-deptn':'(민간)김천코오롱폐수',_rows:[{'f-acct-code':'5108105','f-acct-name':'(원)통신비-전파사용료','f-jeokyo':'전파사용료_김천','f-cc':'BBW1004','f-prg':'일반예산_비정산','f-supply':'','f-vat':'0','f-bikmok':'제경비-비정산'}]}},
-  {type:'normal',title:'통신비 지원(장유덕)',_default:true,fields:{'f-hold':'소액자금본사','f-payacct':'미지급-종업원','f-dept':'BBW1002','f-deptn':'(민간)구미코오롱폐수',_rows:[{'f-acct-code':'5108103','f-acct-name':'(원)통신비-휴대폰사용료','f-jeokyo':'통신비 지원(장유덕)','f-cc':'BBW1002','f-prg':'일반예산_비정산','f-supply':'','f-vat':'0','f-bikmok':'계약 외-비정산'}]}},
-  {type:'normal',title:'N월 숙소 임차료(삼도뷰앤빌 104동 1106호)',_default:true,fields:{'f-buyer':'윤은비','f-hold':'소액자금본사','f-payacct':'미지급금-일반','f-dept':'BBW1002','f-deptn':'(민간)구미코오롱폐수',_rows:[{'f-acct-code':'5110102','f-acct-name':'(원)지급임차료-부동산','f-jeokyo':'N월 숙소 임차료(삼도뷰앤빌 104동 1106호)','f-cc':'BBW1002','f-prg':'일반예산_비정산','f-supply':'','f-vat':'0','f-bikmok':'계약 외-비정산'}]}},
-  {type:'normal',title:'N월 숙소 임차료(우방신세계 205동 501호)',_default:true,fields:{'f-buyer':'김정동','f-hold':'소액자금본사','f-payacct':'미지급금-일반','f-dept':'BBW1003','f-deptn':'(민간)구미코오롱폐수(증설)',_rows:[{'f-acct-code':'5110102','f-acct-name':'(원)지급임차료-부동산','f-jeokyo':'N월 숙소 임차료(우방신세계 205동 501호)','f-cc':'BBW1003','f-prg':'일반예산_비정산','f-supply':'','f-vat':'0','f-bikmok':'계약 외-비정산'}]}},
-  {type:'normal',title:'숙소관리비(삼도뷰앤빌 106동 903호)',_default:true,fields:{'f-buyer':'삼도뷰앤빌W 입주자대표회의','f-hold':'전도금','f-payacct':'미지급금-일반','f-dept':'BBW1002','f-deptn':'(민간)구미코오롱폐수',_rows:[{'f-acct-code':'5105104','f-acct-name':'(원)복리후생비-숙소관리비','f-jeokyo':'숙소관리비(삼도뷰앤빌 106동 903호)','f-cc':'BBW1002','f-prg':'일반예산_비정산','f-supply':'','f-vat':'0','f-bikmok':'제경비-비정산'}]}},
-  {type:'normal',title:'숙소관리비(삼도뷰앤빌 104동 1106호)',_default:true,fields:{'f-buyer':'삼도뷰앤빌W 입주자대표회의','f-hold':'전도금','f-payacct':'미지급금-일반','f-dept':'BBW1002','f-deptn':'(민간)구미코오롱폐수',_rows:[{'f-acct-code':'5105104','f-acct-name':'(원)복리후생비-숙소관리비','f-jeokyo':'숙소관리비(삼도뷰앤빌 104동 1106호)','f-cc':'BBW1002','f-prg':'일반예산_비정산','f-supply':'','f-vat':'0','f-bikmok':'제경비-비정산'}]}},
-  {type:'normal',title:'숙소관리비(우방신세계 205동 501호)',_default:true,fields:{'f-buyer':'우방신세계타운2단지 입주자대표회의','f-hold':'전도금','f-payacct':'미지급금-일반','f-dept':'BBW1003','f-deptn':'(민간)구미코오롱폐수(증설)',_rows:[{'f-acct-code':'5105104','f-acct-name':'(원)복리후생비-숙소관리비','f-jeokyo':'숙소관리비(우방신세계 205동 501호)','f-cc':'BBW1003','f-prg':'일반예산_비정산','f-supply':'','f-vat':'0','f-bikmok':'제경비-비정산'}]}},
-  {type:'normal',title:'숙소관리비(동원미라클 2차 202호)',_default:true,fields:{'f-buyer':'동원미라클2차 입주자대표회의','f-hold':'전도금','f-payacct':'미지급금-일반','f-dept':'BBW1004','f-deptn':'(민간)김천코오롱폐수',_rows:[{'f-acct-code':'5105104','f-acct-name':'(원)복리후생비-숙소관리비','f-jeokyo':'숙소관리비(동원미라클 2차 202호)','f-cc':'BBW1004','f-prg':'일반예산_비정산','f-supply':'','f-vat':'0','f-bikmok':'제경비-비정산'}]}},
-  {type:'silmool',title:'숙소 가스비_증설(우방신세계 205동 501호)',_default:true,fields:{'f-buyer':'영남에너지서비스(주)','f-hold':'전도금','f-taxcode':'VI 매입-세금계산서-일반-실물(10%)','f-payacct':'미지급금-일반','f-dept':'BBW1003','f-deptn':'(민간)구미코오롱폐수(증설)',_rows:[{'f-acct-code':'5105104','f-acct-name':'(원)복리후생비-숙소관리비','f-jeokyo':'숙소 가스비(우방신세계 205동 501호)','f-cc':'BBW1003','f-prg':'일반예산_비정산','f-taxnm':'VI 매입-세금계산서-일반-실물(10%)','f-supply':'','f-vat':'','f-bikmok':'제경비-비정산'}]}},
-  {type:'tax',title:'카페 식대_김천',_default:true,fields:{'f-buyer':'코오롱글로벌(주)FS김천1점','f-hold':'소액자금본사','f-payacct':'미지급금-일반','f-taxcode':'(VB)세금계산서(10%)','f-dept':'BBW1004','f-deptn':'(민간)김천코오롱폐수',_rows:[{'f-acct-code':'5105110','f-acct-name':'(원)복리후생비-식대보조','f-jeokyo':'카페 식대_김천','f-cc':'BBW1004','f-prg':'일반예산_비정산','f-taxnm':'(VB)세금계산서(10%)','f-supply':'','f-vat':'','f-bikmok':'제경비-비정산'}]}},
-  {type:'chaekwon',title:'위탁운영비 청구_구미(부산물처리시설)',_default:true,fields:{'f-jptype':'일반매출','f-taxcode':'AA매출-세금계산서-전자증빙(10%)','f-ca':'외상매출금-원화','f-buyer':'코오롱인더스트리(주) 구미공장','f-dept':'BBW1002','f-deptn':'(민간)구미코오롱폐수',_rows:[{'f-acct-code':'4011100','f-acct-name':'국내O&M사업수입','f-jeokyo':'부산물처리시설 위탁비 청구_구미','f-cc':'BBW1002','f-prg':'일반예산','f-taxnm':'AA매출-세금계산서-전자증빙(10%)','f-supply':'','f-vat':''}]}},
-  {type:'chaekwon',title:'위탁운영비 청구_구미증설(부산물처리시설)',_default:true,fields:{'f-jptype':'일반매출','f-taxcode':'AA매출-세금계산서-전자증빙(10%)','f-ca':'외상매출금-원화','f-buyer':'코오롱인더스트리(주) 구미공장','f-dept':'BBW1003','f-deptn':'(민간)구미코오롱폐수(증설)',_rows:[{'f-acct-code':'4011100','f-acct-name':'국내O&M사업수입','f-jeokyo':'부산물처리시설 위탁비 청구_구미증설','f-cc':'BBW1003','f-prg':'일반예산','f-taxnm':'AA매출-세금계산서-전자증빙(10%)','f-supply':'','f-vat':''}]}},
-  {type:'chaekwon',title:'석회석 약품비_구미',_default:true,fields:{'f-jptype':'일반매출','f-taxcode':'AA매출-세금계산서-전자증빙(10%)','f-ca':'외상매출금-원화','f-buyer':'코오롱인더스트리(주) 구미공장','f-dept':'BBW1002','f-deptn':'(민간)구미코오롱폐수',_rows:[{'f-acct-code':'4011100','f-acct-name':'국내O&M사업수입','f-jeokyo':'석회석 약품비_구미','f-cc':'BBW1002','f-prg':'일반예산','f-taxnm':'AA매출-세금계산서-전자증빙(10%)','f-supply':'','f-vat':''}]}},
-  {type:'kita',kita:'gl',title:'전도금 반납_구미',_default:true,fields:{'f-jeokyo-header':'전도금 반납_구미','f-gl-cc':'BBW1002','f-gl-ccn':'(민간)구미코오롱폐수',_rows:[]}},
-  {type:'kita',kita:'gl',title:'전도금 반납_김천',_default:true,fields:{'f-jeokyo-header':'전도금 반납_김천','f-gl-cc':'BBW1004','f-gl-ccn':'(민간)김천코오롱폐수',_rows:[]}}
+  {"type": "chaekwon", "title": "N월분 폐수처리시설 위탁운영비 청구_구미", "_default": true, "fields": {"f-jptype": "일반매출", "f-taxcode": "AA 매출-세금계산서-전자증빙 (10%)", "f-ca": "외상매출금-원화", "f-issue": "발행", "f-buyer": "코오롱인더스트리(주) 구미공장", "f-expire": "@next20", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "4011100", "f-acct-name": "국내O&M사업수입", "f-jeokyo": "{M}월분 폐수처리시설 위탁운영비 청구", "f-cc": "BBW1002", "f-prg": "", "f-bikmok": "", "f-taxnm": "AA 매출-세금계산서-전자증빙 (10%)", "f-supply": "211196177", "f-vat": "21119617"}]}},
+  {"type": "chaekwon", "title": "N월 부산물처리시설 위탁비 청구_구미", "_default": true, "fields": {"f-jptype": "일반매출", "f-taxcode": "AA 매출-세금계산서-전자증빙 (10%)", "f-ca": "외상매출금-원화", "f-issue": "발행", "f-buyer": "코오롱인더스트리(주) 구미공장", "f-expire": "@next20", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "4011100", "f-acct-name": "국내O&M사업수입", "f-jeokyo": "{M}월 부산물처리시설 위탁비 청구", "f-cc": "BBW1002", "f-prg": "", "f-bikmok": "", "f-taxnm": "AA 매출-세금계산서-전자증빙 (10%)", "f-supply": "129531298", "f-vat": "12953129"}]}},
+  {"type": "chaekwon", "title": "N월 부산물처리시설 위탁비(증설) 청구", "_default": true, "fields": {"f-jptype": "일반매출", "f-taxcode": "AA 매출-세금계산서-전자증빙 (10%)", "f-ca": "외상매출금-원화", "f-issue": "발행", "f-buyer": "코오롱인더스트리(주) 구미공장", "f-expire": "@next20", "f-dept": "BBW1003", "f-deptn": "(민간)구미코오롱폐수(증설)", "_rows": [{"f-acct-code": "4011100", "f-acct-name": "국내O&M사업수입", "f-jeokyo": "{M}월 부산물처리시설 위탁비(증설) 청구", "f-cc": "BBW1003", "f-prg": "", "f-bikmok": "", "f-taxnm": "AA 매출-세금계산서-전자증빙 (10%)", "f-supply": "298328648", "f-vat": "29832864"}]}},
+  {"type": "chaekwon", "title": "N월 석회석 약품비_구미", "_default": true, "fields": {"f-jptype": "일반매출", "f-taxcode": "AA 매출-세금계산서-전자증빙 (10%)", "f-ca": "외상매출금-원화", "f-issue": "발행", "f-buyer": "코오롱인더스트리(주) 구미공장", "f-expire": "@next3End", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "4011100", "f-acct-name": "국내O&M사업수입", "f-jeokyo": "{M}월 석회석 약품비", "f-cc": "BBW1002", "f-prg": "", "f-bikmok": "", "f-taxnm": "AA 매출-세금계산서-전자증빙 (10%)", "f-supply": "73509020", "f-vat": "7350902"}]}},
+  {"type": "chaekwon", "title": "N월 폐수처리시설 위탁비 청구_김천(1공장)", "_default": true, "fields": {"f-jptype": "일반매출", "f-taxcode": "AA 매출-세금계산서-전자증빙 (10%)", "f-ca": "외상매출금-원화", "f-issue": "발행", "f-buyer": "코오롱인더스트리(주)김천공장", "f-expire": "@next20", "f-dept": "BBW1004", "f-deptn": "(민간)김천코오롱폐수", "_rows": [{"f-acct-code": "4011100", "f-acct-name": "국내O&M사업수입", "f-jeokyo": "{M}월 폐수처리시설 위탁비 청구", "f-cc": "BBW1004", "f-prg": "", "f-bikmok": "", "f-taxnm": "AA 매출-세금계산서-전자증빙 (10%)", "f-supply": "50693690", "f-vat": "5069369"}]}},
+  {"type": "chaekwon", "title": "N월 폐수처리시설 위탁비 청구_김천(3공장)", "_default": true, "fields": {"f-jptype": "일반매출", "f-taxcode": "AA 매출-세금계산서-전자증빙 (10%)", "f-ca": "외상매출금-원화", "f-issue": "발행", "f-buyer": "코오롱인더스트리(주) 김천3공장", "f-expire": "@next20", "f-dept": "BBW1004", "f-deptn": "(민간)김천코오롱폐수", "_rows": [{"f-acct-code": "4011100", "f-acct-name": "국내O&M사업수입", "f-jeokyo": "{M}월 폐수처리시설 위탁비 청구", "f-cc": "BBW1004", "f-prg": "", "f-bikmok": "", "f-taxnm": "AA 매출-세금계산서-전자증빙 (10%)", "f-supply": "94821594", "f-vat": "9482159"}]}},
+  {"type": "chaekwon", "title": "위탁운영비 청구_구미증설", "_default": true, "fields": {"f-jptype": "일반매출", "f-taxcode": "AA 매출-세금계산서-전자증빙 (10%)", "f-ca": "외상매출금-원화", "f-issue": "발행", "f-buyer": "코오롱인더스트리(주) 구미공장", "f-expire": "@next20", "f-dept": "BBW1003", "f-deptn": "(민간)구미코오롱폐수(증설)", "_rows": [{"f-acct-code": "4011100", "f-acct-name": "국내O&M사업수입", "f-jeokyo": "위탁운영비 청구_구미증설", "f-cc": "BBW1003", "f-prg": "", "f-bikmok": "", "f-taxnm": "AA 매출-세금계산서-전자증빙 (10%)", "f-supply": "", "f-vat": ""}]}},
+  {"type": "chaekwon", "title": "N월 Utility사용료 진행매출_구미", "_default": true, "fields": {"f-jptype": "진행매출", "f-taxcode": "세금코드 없음", "f-ca": "외상매출금-진행매출", "f-issue": "미발행", "f-buyer": "코오롱인더스트리(주) 구미공장", "f-date1": "@prevEnd", "f-date2": "@prevEnd", "f-expire": "@this20", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "4011110", "f-acct-name": "국내O&M사업수입-조정수익", "f-jeokyo": "{M-1}월 Utility사용료 진행매출_구미", "f-cc": "BBW1002", "f-prg": "", "f-bikmok": "", "f-taxnm": "세금코드 없음", "f-supply": "121116000", "f-vat": "0"}]}},
+  {"type": "chaekwon", "title": "N월 Utility사용료 진행매출_증설", "_default": true, "fields": {"f-jptype": "진행매출", "f-taxcode": "세금코드 없음", "f-ca": "외상매출금-진행매출", "f-issue": "미발행", "f-buyer": "코오롱인더스트리(주) 구미공장", "f-date1": "@prevEnd", "f-date2": "@prevEnd", "f-expire": "@this20", "f-dept": "BBW1003", "f-deptn": "(민간)구미코오롱폐수(증설)", "_rows": [{"f-acct-code": "4011110", "f-acct-name": "국내O&M사업수입-조정수익", "f-jeokyo": "{M-1}월 Utility사용료 진행매출_증설", "f-cc": "BBW1003", "f-prg": "", "f-bikmok": "", "f-taxnm": "세금코드 없음", "f-supply": "46613000", "f-vat": "0"}]}},
+  {"type": "chaekwon", "title": "N월 Utility사용료 진행매출_김천", "_default": true, "fields": {"f-jptype": "진행매출", "f-taxcode": "세금코드 없음", "f-ca": "외상매출금-진행매출", "f-issue": "미발행", "f-buyer": "코오롱인더스트리(주)김천공장", "f-date1": "@prevEnd", "f-date2": "@prevEnd", "f-expire": "@this20", "f-dept": "BBW1004", "f-deptn": "(민간)김천코오롱폐수", "_rows": [{"f-acct-code": "4011110", "f-acct-name": "국내O&M사업수입-조정수익", "f-jeokyo": "{M-1}월 Utility사용료 진행매출_김천", "f-cc": "BBW1004", "f-prg": "", "f-bikmok": "", "f-taxnm": "세금코드 없음", "f-supply": "49845358", "f-vat": "0"}]}},
+  {"type": "kita", "kita": "arap", "title": "N월 Utility사용료 진행매출 상계_구미", "_default": true, "fields": {"f-date1": "@thisFirst", "f-date2": "@thisFirst", "f-jeokyo-header": "{M-1}월 Utility사용료 진행매출 상계_구미", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [], "_ar": [{"dc": "대변", "jno": "", "type": "WD", "acct": "1121102", "acctn": "외상매출금-진행매출", "bal": "121116000", "rem": "121116000", "dr": "0", "cr": "121116000", "cc": "BBW1002", "vcode": "", "vendor": "코오롱인더스트리(주) 구미공장", "jeokyo": "{M-1}월 Utility사용료 진행매출_구미"}, {"dc": "차변", "jno": "", "type": "", "acct": "4011110", "acctn": "국내O&M사업수입-조정수익", "bal": "0", "rem": "0", "dr": "121116000", "cr": "0", "cc": "BBW1002", "vcode": "10237690", "vendor": "코오롱인더스트리(주) 구미공장", "jeokyo": "{M-1}월 Utility사용료 진행매출 상계_구미"}]}},
+  {"type": "kita", "kita": "arap", "title": "N월 Utility사용료 진행매출 상계_증설", "_default": true, "fields": {"f-date1": "@thisFirst", "f-date2": "@thisFirst", "f-jeokyo-header": "{M-1}월 Utility사용료 진행매출 상계_증설", "f-dept": "BBW1003", "f-deptn": "(민간)구미코오롱폐수(증설)", "_rows": [], "_ar": [{"dc": "대변", "jno": "", "type": "WD", "acct": "1121102", "acctn": "외상매출금-진행매출", "bal": "46613000", "rem": "46613000", "dr": "0", "cr": "46613000", "cc": "BBW1003", "vcode": "", "vendor": "코오롱인더스트리(주) 구미공장", "jeokyo": "{M-1}월 Utility사용료 진행매출_증설"}, {"dc": "차변", "jno": "", "type": "", "acct": "4011110", "acctn": "국내O&M사업수입-조정수익", "bal": "0", "rem": "0", "dr": "46613000", "cr": "0", "cc": "BBW1003", "vcode": "10237690", "vendor": "코오롱인더스트리(주) 구미공장", "jeokyo": "{M-1}월 Utility사용료 진행매출 상계_증설"}]}},
+  {"type": "kita", "kita": "arap", "title": "N월 Utility사용료 진행매출 상계_김천", "_default": true, "fields": {"f-date1": "@thisFirst", "f-date2": "@thisFirst", "f-jeokyo-header": "{M-1}월 Utility사용료 진행매출 상계_김천", "f-dept": "BBW1004", "f-deptn": "(민간)김천코오롱폐수", "_rows": [], "_ar": [{"dc": "대변", "jno": "", "type": "WD", "acct": "1121102", "acctn": "외상매출금-진행매출", "bal": "49845358", "rem": "49845358", "dr": "0", "cr": "49845358", "cc": "BBW1004", "vcode": "", "vendor": "코오롱인더스트리(주)김천공장", "jeokyo": "{M-1}월 Utility사용료 진행매출_김천"}, {"dc": "차변", "jno": "", "type": "", "acct": "4011110", "acctn": "국내O&M사업수입-조정수익", "bal": "0", "rem": "0", "dr": "49845358", "cr": "0", "cc": "BBW1004", "vcode": "10507193", "vendor": "코오롱인더스트리(주)김천공장", "jeokyo": "{M-1}월 Utility사용료 진행매출 상계_김천"}]}},
+  {"type": "kita", "kita": "arap", "title": "N월 입금채권반제(위탁비)", "_default": true, "fields": {"f-jeokyo-header": "입금채권반제", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [], "_ar": [{"dc": "대변", "type": "WD", "acct": "1121101", "acctn": "외상매출금-원화", "bal": "125060804", "rem": "125060804", "dr": "0", "cr": "125060804", "cc": "BBW1002", "vendor": "코오롱인더스트리(주) 구미공장", "jeokyo": "{M-1}월 부산물처리시설 위탁비 청구"}, {"dc": "대변", "type": "WD", "acct": "1121101", "acctn": "외상매출금-원화", "bal": "193682304", "rem": "193682304", "dr": "0", "cr": "193682304", "cc": "BBW1002", "vendor": "코오롱인더스트리(주) 구미공장", "jeokyo": "{M-1}월 폐수처리시설 위탁비 청구"}, {"dc": "대변", "type": "WD", "acct": "1121101", "acctn": "외상매출금-원화", "bal": "276265994", "rem": "276265994", "dr": "0", "cr": "276265994", "cc": "BBW1003", "vendor": "코오롱인더스트리(주) 구미공장", "jeokyo": "{M-1}월 부산물처리시설 위탁비(증설) 청구"}, {"dc": "대변", "type": "WD", "acct": "1121101", "acctn": "외상매출금-원화", "bal": "97964603", "rem": "97964603", "dr": "0", "cr": "97964603", "cc": "BBW1004", "vendor": "코오롱인더스트리(주) 김천3공장", "jeokyo": "{M-1}월 폐수처리시설 위탁비 청구"}, {"dc": "차변", "type": "F2", "acct": "2013601", "acctn": "가수금-일반", "bal": "692973705", "rem": "692973705", "dr": "692973705", "cr": "0", "cc": "BBW1002", "vendor": "", "jeokyo": "가수(일반)/하나은행"}]}},
+  {"type": "kita", "kita": "jeondo", "title": "N월 전도금 사용분_구미", "_default": true, "fields": {"f-jeokyo-header": "{M}월 전도금 사용분", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [], "_jd": [{"jno": "", "dc": "H", "type": "W1", "date": "", "amt": "15250", "vcode": "0010164111", "vendor": "영남에너지서비스(주)", "acct": "", "acctn": "미지급금-일반", "cc": "BBW1002", "jeokyo": "숙소가스비 (우방신세계 205동 501호)"}, {"jno": "", "dc": "H", "type": "W3", "date": "", "amt": "55070", "vcode": "0010510633", "vendor": "삼도뷰엔빌W 입주자대표회의", "acct": "", "acctn": "미지급금-일반", "cc": "BBW1002", "jeokyo": "숙소관리비 (삼도뷰엔빌 104동 1106호)"}, {"jno": "", "dc": "H", "type": "W3", "date": "", "amt": "217340", "vcode": "0010510681", "vendor": "우방신세계타운2단지 입주자대표회의", "acct": "", "acctn": "미지급금-일반", "cc": "BBW1002", "jeokyo": "숙소관리비 (우방신세계 205동 501호)"}, {"jno": "", "dc": "H", "type": "W3", "date": "", "amt": "189230", "vcode": "0010510633", "vendor": "삼도뷰엔빌W 입주자대표회의", "acct": "", "acctn": "미지급금-일반", "cc": "BBW1002", "jeokyo": "숙소관리비 (삼도뷰엔빌 106동 903호)"}, {"jno": "", "dc": "H", "type": "W3", "date": "", "amt": "24000", "vcode": "0010307612", "vendor": "서울전파관리소", "acct": "", "acctn": "미지급금-일반", "cc": "BBW1002", "jeokyo": "전파사용료-구미"}]}},
+  {"type": "kita", "kita": "jeondo", "title": "N월 전도금 사용분_김천", "_default": true, "fields": {"f-jeokyo-header": "{M}월 전도금 사용분", "f-dept": "BBW1004", "f-deptn": "(민간)김천코오롱폐수", "_rows": [], "_jd": [{"jno": "", "dc": "H", "type": "W4", "date": "", "amt": "26920", "vcode": "0010126629", "vendor": "코웨이(주)", "acct": "", "acctn": "미지급금-일반", "cc": "BBW1004", "jeokyo": "정수기 임차료_김천"}, {"jno": "", "dc": "H", "type": "W1", "date": "", "amt": "38110", "vcode": "0010004383", "vendor": "(주)케이티", "acct": "", "acctn": "미지급금-일반", "cc": "BBW1004", "jeokyo": "인터넷 사용료-김천"}, {"jno": "", "dc": "H", "type": "W3", "date": "", "amt": "9000", "vcode": "0010510652", "vendor": "대전전파관리소", "acct": "", "acctn": "미지급금-일반", "cc": "BBW1004", "jeokyo": "전파사용료-김천"}, {"jno": "", "dc": "H", "type": "W4", "date": "", "amt": "26400", "vcode": "0010507184", "vendor": "진로명품 (진로김천대형)", "acct": "", "acctn": "미지급금-일반", "cc": "BBW1004", "jeokyo": "생수 구매"}, {"jno": "", "dc": "H", "type": "W3", "date": "", "amt": "129800", "vcode": "0010510683", "vendor": "동원미라클2차 입주자대표회의", "acct": "", "acctn": "미지급금-일반", "cc": "BBW1004", "jeokyo": "숙소관리비 (동원미라클 2차 202호)"}]}},
+  {"type": "kita", "kita": "jeondo", "title": "전도금 반납_구미", "_default": true, "fields": {"f-jeokyo-header": "전도금 반납", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [], "_jd": [{"jno": "", "dc": "H", "type": "F1", "date": "", "amt": "149110", "vcode": "", "vendor": "", "acct": "2013602", "acctn": "가수금-가상계좌", "cc": "BBW1002", "jeokyo": "가수(가상)/하나은행/21991001386104/전도금구미/DBBW1002"}]}},
+  {"type": "kita", "kita": "jeondo", "title": "전도금 반납_김천", "_default": true, "fields": {"f-jeokyo-header": "전도금 반납", "f-dept": "BBW1004", "f-deptn": "(민간)김천코오롱폐수", "_rows": [], "_jd": [{"jno": "", "dc": "H", "type": "F1", "date": "", "amt": "69770", "vcode": "", "vendor": "", "acct": "2013602", "acctn": "가수금-가상계좌", "cc": "BBW1004", "jeokyo": "가수(가상)/하나은행/21991001386104/전도금김천/DBBW1004"}]}},
+  {"type": "tax", "title": "N월 식대_구미", "_default": true, "fields": {"f-taxcode": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-buyer": "코오롱글로벌(주)FS구미점", "f-sbn": "2038537326", "f-bank": "우리은행", "f-bankno": "1005901952856", "f-hold": "소액자금본사", "f-duedate": "@next15", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "5105110", "f-acct-name": "(원)복리후생비-식대보조", "f-jeokyo": "{M}월 식대_구미", "f-cc": "BBW1002", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-supply": "1320300", "f-vat": "132030"}]}},
+  {"type": "tax", "title": "N월 식대_구미증설", "_default": true, "fields": {"f-taxcode": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-buyer": "코오롱글로벌(주)FS구미점", "f-sbn": "2038537326", "f-bank": "우리은행", "f-bankno": "1005901952856", "f-hold": "소액자금본사", "f-duedate": "@next15", "f-dept": "BBW1003", "f-deptn": "(민간)구미코오롱폐수(증설)", "_rows": [{"f-acct-code": "5105110", "f-acct-name": "(원)복리후생비-식대보조", "f-jeokyo": "{M}월 식대_증설", "f-cc": "BBW1003", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-supply": "713700", "f-vat": "71370"}]}},
+  {"type": "tax", "title": "N월 식대_김천", "_default": true, "fields": {"f-taxcode": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-buyer": "코오롱글로벌(주)FS김천1점", "f-sbn": "6348502939", "f-bank": "우리은행", "f-bankno": "1005901952856", "f-hold": "소액자금본사", "f-duedate": "@next15", "f-dept": "BBW1004", "f-deptn": "(민간)김천코오롱폐수", "_rows": [{"f-acct-code": "5105104", "f-acct-name": "(원)복리후생비-숙소관리비", "f-jeokyo": "{M}월 식대-김천", "f-cc": "BBW1004", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-supply": "762700", "f-vat": "76270"}]}},
+  {"type": "tax", "title": "N월 카페 식대_구미", "_default": true, "fields": {"f-taxcode": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-buyer": "코오롱글로벌(주)FS구미점", "f-sbn": "2038537326", "f-bank": "우리은행", "f-bankno": "1005901952856", "f-hold": "소액자금본사", "f-duedate": "@next15", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "5105110", "f-acct-name": "(원)복리후생비-식대보조", "f-jeokyo": "{M}월 식대-구미", "f-cc": "BBW1002", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-supply": "1079700", "f-vat": "107970"}]}},
+  {"type": "tax", "title": "N월 카페 식대_구미증설", "_default": true, "fields": {"f-taxcode": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-buyer": "코오롱글로벌(주)FS구미점", "f-sbn": "2038537326", "f-bank": "우리은행", "f-bankno": "1005901952856", "f-hold": "소액자금본사", "f-duedate": "@next15", "f-dept": "BBW1003", "f-deptn": "(민간)구미코오롱폐수(증설)", "_rows": [{"f-acct-code": "5105110", "f-acct-name": "(원)복리후생비-식대보조", "f-jeokyo": "{M}월 식대-증설", "f-cc": "BBW1003", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-supply": "724200", "f-vat": "72420"}]}},
+  {"type": "tax", "title": "N월 카페 식대_김천", "_default": true, "fields": {"f-taxcode": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-buyer": "코오롱글로벌(주)FS김천1점", "f-sbn": "6348502939", "f-bank": "우리은행", "f-bankno": "1005901952856", "f-hold": "소액자금본사", "f-duedate": "@next15", "f-dept": "BBW1004", "f-deptn": "(민간)김천코오롱폐수", "_rows": [{"f-acct-code": "5105110", "f-acct-name": "(원)복리후생비-식대보조", "f-jeokyo": "{M}월 카페 식대-김천", "f-cc": "BBW1004", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-supply": "204000", "f-vat": "20400"}]}},
+  {"type": "tax", "title": "N월 청소용역비_구미", "_default": true, "fields": {"f-taxcode": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-buyer": "(주)엔아이테크", "f-sbn": "7318103930", "f-bank": "대구은행", "f-bankno": "504106522814", "f-hold": "소액자금본사", "f-duedate": "@next15", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "5117006", "f-acct-name": "(원)지급수수료-용역비", "f-jeokyo": "{M}월 용역비(청소용역_이수현)_구미", "f-cc": "BBW1002", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-supply": "2205000", "f-vat": "220500"}]}},
+  {"type": "tax", "title": "복합기 임차료", "_default": true, "fields": {"f-taxcode": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-buyer": "캐논코리아(주)", "f-sbn": "1208115636", "f-bank": "국민은행", "f-bankno": "79759078280353", "f-hold": "", "f-duedate": "@nextEnd", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "5110107", "f-acct-name": "(원)지급임차료-렌탈료", "f-jeokyo": "복합기 임차료_구미", "f-cc": "BBW1002", "f-prg": "일반예산_비정산", "f-bikmok": "계약 외-비정산", "f-taxnm": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-supply": "84860", "f-vat": "8486"}, {"f-acct-code": "5110107", "f-acct-name": "(원)지급임차료-렌탈료", "f-jeokyo": "복합기 임차료_김천", "f-cc": "BBW1004", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-supply": "84200", "f-vat": "8420"}]}},
+  {"type": "tax", "title": "생수 구매_김천", "_default": true, "fields": {"f-taxcode": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-buyer": "진로명품 (진로김천대형)", "f-sbn": "5100368508", "f-bank": "NH농협은행", "f-bankno": "77601082997", "f-hold": "전도금", "f-duedate": "@nextEnd", "f-dept": "BBW1004", "f-deptn": "(민간)김천코오롱폐수", "_rows": [{"f-acct-code": "5110107", "f-acct-name": "(원)지급임차료-렌탈료", "f-jeokyo": "생수 구매", "f-cc": "BBW1004", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-supply": "24000", "f-vat": "2400"}]}},
+  {"type": "tax", "title": "안전장비 구매_가스검지기 외(구미)", "_default": true, "fields": {"f-taxcode": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-buyer": "(주)서브원", "f-sbn": "8528601272", "f-bank": "우리은행", "f-bankno": "1005903589962", "f-hold": "", "f-duedate": "@nextEnd", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "5129001", "f-acct-name": "(원)안전관리비-일반", "f-jeokyo": "안전장비*휴대형 가스검지기 외", "f-cc": "BBW1002", "f-prg": "일반예산_비정산", "f-bikmok": "계약 외-비정산", "f-taxnm": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-supply": "1858000", "f-vat": "185800"}]}},
+  {"type": "tax", "title": "안전장비 구매_안전그네 외(증설)", "_default": true, "fields": {"f-taxcode": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-buyer": "(주)서브원", "f-sbn": "8528601272", "f-bank": "우리은행", "f-bankno": "1005903589962", "f-hold": "", "f-duedate": "@nextEnd", "f-dept": "BBW1003", "f-deptn": "(민간)구미코오롱폐수(증설)", "_rows": [{"f-acct-code": "5129001", "f-acct-name": "(원)안전관리비-일반", "f-jeokyo": "안전장비*안전그네 외", "f-cc": "BBW1003", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-supply": "1858000", "f-vat": "185800"}]}},
+  {"type": "tax", "title": "안전장비 구매_테릭스실드 외(구미)", "_default": true, "fields": {"f-taxcode": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-buyer": "개풍 에스티", "f-sbn": "6021667846", "f-bank": "대구은행", "f-bankno": "24713147743", "f-hold": "", "f-duedate": "@nextEnd", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "5118005", "f-acct-name": "(원)수선비-안전관리비", "f-jeokyo": "안정장비*테릭스실드 외", "f-cc": "BBW1002", "f-prg": "일반예산_비정산", "f-bikmok": "수선유지비-비정산", "f-taxnm": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-supply": "1864000", "f-vat": "186400"}, {"f-acct-code": "5118005", "f-acct-name": "(원)수선비-안전관리비", "f-jeokyo": "안정장비*온열질환 방지용 이동식 에어컨", "f-cc": "BBW1002", "f-prg": "일반예산_비정산", "f-bikmok": "수선유지비-비정산", "f-taxnm": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-supply": "850000", "f-vat": "85000"}]}},
+  {"type": "tax", "title": "코웨이 정수기 렌탈료_구미", "_default": true, "fields": {"f-taxcode": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-buyer": "코웨이(주)", "f-sbn": "", "f-bank": "", "f-bankno": "", "f-hold": "", "f-duedate": "", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "", "f-acct-name": "", "f-jeokyo": "코웨이 정수기 렌탈료_구미", "f-cc": "BBW1002", "f-prg": "일반예산_비정산", "f-bikmok": "계약 외-비정산", "f-taxnm": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-supply": "", "f-vat": ""}]}},
+  {"type": "tax", "title": "청소용역비_김천", "_default": true, "fields": {"f-taxcode": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-buyer": "", "f-sbn": "", "f-bank": "", "f-bankno": "", "f-hold": "", "f-duedate": "", "f-dept": "BBW1004", "f-deptn": "(민간)김천코오롱폐수", "_rows": [{"f-acct-code": "5117006", "f-acct-name": "(원)지급수수료-용역비", "f-jeokyo": "청소용역비_김천", "f-cc": "BBW1004", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-supply": "", "f-vat": ""}]}},
+  {"type": "tax", "title": "수질 분석비_구미", "_default": true, "fields": {"f-taxcode": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-buyer": "", "f-sbn": "", "f-bank": "", "f-bankno": "", "f-hold": "", "f-duedate": "", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "", "f-acct-name": "", "f-jeokyo": "수질 분석비_구미", "f-cc": "BBW1002", "f-prg": "일반예산_비정산", "f-bikmok": "분석비-비정산", "f-taxnm": "VB 매입-세금계산서-일반-전자증빙 (10%)", "f-supply": "", "f-vat": ""}]}},
+  {"type": "jiro", "title": "인터넷 사용료_구미", "_default": true, "fields": {"f-sbn": "1028142945", "f-jiro-no": "0000000", "f-jiro-issuer": "한국통신", "f-jiro-type": "전화/전기/TV", "f-taxcode": "VI 매입-세금계산서-지로-전자증빙 (10%)", "f-buyer": "(주)케이티", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "5108102", "f-acct-name": "(원)통신비-인터넷데이타통신", "f-jeokyo": "인터넷 사용료", "f-cc": "BBW1002", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "VI 매입-세금계산서-지로-전자증빙 (10%)", "f-supply": "39245", "f-vat": "3925"}]}},
+  {"type": "jiro", "title": "인터넷 사용료_김천", "_default": true, "fields": {"f-sbn": "1028142945", "f-jiro-no": "0000000", "f-jiro-issuer": "한국통신", "f-jiro-type": "전화/전기/TV", "f-taxcode": "VI 매입-세금계산서-지로-전자증빙 (10%)", "f-buyer": "(주)케이티", "f-dept": "BBW1004", "f-deptn": "(민간)김천코오롱폐수", "_rows": [{"f-acct-code": "5108102", "f-acct-name": "(원)통신비-인터넷데이타통신", "f-jeokyo": "인터넷 사용료", "f-cc": "BBW1004", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "VI 매입-세금계산서-지로-전자증빙 (10%)", "f-supply": "44454", "f-vat": "4446"}]}},
+  {"type": "jiro", "title": "KT 전화료_구미", "_default": true, "fields": {"f-sbn": "1028142945", "f-jiro-no": "0000000", "f-jiro-issuer": "한국통신", "f-jiro-type": "전화/전기/TV", "f-taxcode": "VI 매입-세금계산서-지로-전자증빙 (10%)", "f-buyer": "(주)케이티", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "5108101", "f-acct-name": "(원)통신비-유선전화", "f-jeokyo": "kt 전화료", "f-cc": "BBW1002", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "VI 매입-세금계산서-지로-전자증빙 (10%)", "f-supply": "5309", "f-vat": "531"}]}},
+  {"type": "jiro", "title": "KT 전화료_김천", "_default": true, "fields": {"f-sbn": "1028142945", "f-jiro-no": "0000000", "f-jiro-issuer": "한국통신", "f-jiro-type": "전화/전기/TV", "f-taxcode": "VI 매입-세금계산서-지로-전자증빙 (10%)", "f-buyer": "(주)케이티", "f-dept": "BBW1004", "f-deptn": "(민간)김천코오롱폐수", "_rows": [{"f-acct-code": "5108101", "f-acct-name": "(원)통신비-유선전화", "f-jeokyo": "kt 전화료", "f-cc": "BBW1004", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "VI 매입-세금계산서-지로-전자증빙 (10%)", "f-supply": "4000", "f-vat": "400"}]}},
+  {"type": "jiro", "title": "숙소 가스비_구미(삼도뷰엔빌 106동 903호)", "_default": true, "fields": {"f-sbn": "5138102333", "f-jiro-no": "4002949", "f-jiro-issuer": "영남에너지", "f-jiro-type": "일반지로", "f-taxcode": "VI 매입-세금계산서-지로-전자증빙 (10%)", "f-buyer": "영남에너지서비스(주)", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "5105104", "f-acct-name": "(원)복리후생비-숙소관리비", "f-jeokyo": "숙소 가스비 (삼도뷰엔빌 106동 903호)", "f-cc": "BBW1002", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "VI 매입-세금계산서-지로-전자증빙 (10%)", "f-supply": "5945", "f-vat": "595"}]}},
+  {"type": "jiro", "title": "숙소 전기료_김천(동원미라클 2차 202호)", "_default": true, "fields": {"f-sbn": "1208200052", "f-jiro-no": "0000000", "f-jiro-issuer": "한국전력", "f-jiro-type": "전화/전기/TV", "f-taxcode": "VI 매입-세금계산서-지로-전자증빙 (10%)", "f-buyer": "한국전력공사", "f-dept": "BBW1004", "f-deptn": "(민간)김천코오롱폐수", "_rows": [{"f-acct-code": "5105104", "f-acct-name": "(원)복리후생비-숙소관리비", "f-jeokyo": "숙소 전기료 (동원미라클 2차 202호)", "f-cc": "BBW1004", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "VI 매입-세금계산서-지로-전자증빙 (10%)", "f-supply": "113453", "f-vat": "11345"}, {"f-acct-code": "5105104", "f-acct-name": "(원)복리후생비-숙소관리비", "f-jeokyo": "숙소 전기료 (동원미라클 2차 202호)", "f-cc": "BBW1004", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "세금코드 없음", "f-supply": "5552", "f-vat": "0"}]}},
+  {"type": "silmool", "title": "숙소 가스비_증설(우방신세계 205동 501호)", "_default": true, "fields": {"f-jptype2": "일반매입", "f-taxcode": "VI 매입-세금계산서-지로-전자증빙 (10%)", "f-payacct": "미지급금-일반", "f-buyer": "영남에너지서비스(주)", "f-bank": "", "f-bankno": "", "f-hold": "전도금", "f-duedate": "@nextEnd", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "5105104", "f-acct-name": "(원)복리후생비-숙소관리비", "f-jeokyo": "숙소가스비 (우방신세계 205동 501호)", "f-cc": "BBW1003", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "VI 매입-세금계산서-지로-전자증빙 (10%)", "f-supply": "13864", "f-vat": "1386"}]}},
+  {"type": "silmool", "title": "인터넷 사용료_김천(실물)", "_default": true, "fields": {"f-jptype2": "일반매입", "f-taxcode": "VI 매입-세금계산서-지로-전자증빙 (10%)", "f-payacct": "미지급금-일반", "f-buyer": "(주)케이티", "f-bank": "NH농협은행", "f-bankno": "19717022252", "f-hold": "전도금", "f-duedate": "@next15", "f-dept": "BBW1004", "f-deptn": "(민간)김천코오롱폐수", "_rows": [{"f-acct-code": "5108102", "f-acct-name": "(원)통신비-인터넷데이타통신", "f-jeokyo": "인터넷 사용료-김천", "f-cc": "BBW1004", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "VI 매입-세금계산서-지로-전자증빙 (10%)", "f-supply": "34645", "f-vat": "3465"}]}},
+  {"type": "silmool", "title": "약품 구매_구미", "_default": true, "fields": {"f-jptype2": "일반매입", "f-taxcode": "VI매입-세금계산서-일반-실물(10%)", "f-payacct": "미지급금-일반", "f-buyer": "", "f-bank": "", "f-bankno": "", "f-hold": "", "f-duedate": "", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "", "f-acct-name": "", "f-jeokyo": "약품 구매_구미", "f-cc": "BBW1002", "f-prg": "일반예산_정산", "f-bikmok": "약품비-정산", "f-taxnm": "VI매입-세금계산서-일반-실물(10%)", "f-supply": "", "f-vat": ""}]}},
+  {"type": "silmool", "title": "약품 구매_구미증설", "_default": true, "fields": {"f-jptype2": "일반매입", "f-taxcode": "VI매입-세금계산서-일반-실물(10%)", "f-payacct": "미지급금-일반", "f-buyer": "", "f-bank": "", "f-bankno": "", "f-hold": "", "f-duedate": "", "f-dept": "BBW1003", "f-deptn": "(민간)구미코오롱폐수(증설)", "_rows": [{"f-acct-code": "", "f-acct-name": "", "f-jeokyo": "약품 구매_구미증설", "f-cc": "BBW1003", "f-prg": "일반예산_정산", "f-bikmok": "약품비-정산", "f-taxnm": "VI매입-세금계산서-일반-실물(10%)", "f-supply": "", "f-vat": ""}]}},
+  {"type": "silmool", "title": "약품 구매_김천", "_default": true, "fields": {"f-jptype2": "일반매입", "f-taxcode": "VI매입-세금계산서-일반-실물(10%)", "f-payacct": "미지급금-일반", "f-buyer": "", "f-bank": "", "f-bankno": "", "f-hold": "", "f-duedate": "", "f-dept": "BBW1004", "f-deptn": "(민간)김천코오롱폐수", "_rows": [{"f-acct-code": "", "f-acct-name": "", "f-jeokyo": "약품 구매_김천", "f-cc": "BBW1004", "f-prg": "일반예산_정산", "f-bikmok": "약품비-정산", "f-taxnm": "VI매입-세금계산서-일반-실물(10%)", "f-supply": "", "f-vat": ""}]}},
+  {"type": "silmool", "title": "슬러지 처리비_구미", "_default": true, "fields": {"f-jptype2": "일반매입", "f-taxcode": "VI매입-세금계산서-일반-실물(10%)", "f-payacct": "미지급금-일반", "f-buyer": "", "f-bank": "", "f-bankno": "", "f-hold": "", "f-duedate": "", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "", "f-acct-name": "", "f-jeokyo": "슬러지 처리비_구미", "f-cc": "BBW1002", "f-prg": "일반예산_정산", "f-bikmok": "폐기물처리비-정산", "f-taxnm": "VI매입-세금계산서-일반-실물(10%)", "f-supply": "", "f-vat": ""}]}},
+  {"type": "silmool", "title": "슬러지 처리비_구미증설", "_default": true, "fields": {"f-jptype2": "일반매입", "f-taxcode": "VI매입-세금계산서-일반-실물(10%)", "f-payacct": "미지급금-일반", "f-buyer": "", "f-bank": "", "f-bankno": "", "f-hold": "", "f-duedate": "", "f-dept": "BBW1003", "f-deptn": "(민간)구미코오롱폐수(증설)", "_rows": [{"f-acct-code": "", "f-acct-name": "", "f-jeokyo": "슬러지 처리비_구미증설", "f-cc": "BBW1003", "f-prg": "일반예산_정산", "f-bikmok": "폐기물처리비-정산", "f-taxnm": "VI매입-세금계산서-일반-실물(10%)", "f-supply": "", "f-vat": ""}]}},
+  {"type": "normal", "title": "N월 숙소 임차료(삼도뷰엔빌 106동 903호)", "_default": true, "fields": {"f-jptype1": "일반경비", "f-taxcode": "세금코드 없음", "f-payacct": "미지급금-일반", "f-buyer": "박진욱", "f-bank": "", "f-bankno": "", "f-hold": "소액자금본사", "f-duedate": "@thisEnd", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "5110102", "f-acct-name": "(원)지급임차료-부동산", "f-jeokyo": "{M+1}월 숙소 임차료 (삼도뷰엔빌 106동 903호)", "f-cc": "BBW1002", "f-prg": "일반예산_비정산", "f-bikmok": "계약 외-비정산", "f-taxnm": "세금코드 없음", "f-supply": "800000", "f-vat": "0"}]}},
+  {"type": "normal", "title": "N월 숙소 임차료(삼도뷰엔빌 104동 1106호)", "_default": true, "fields": {"f-jptype1": "일반경비", "f-taxcode": "세금코드 없음", "f-payacct": "미지급금-일반", "f-buyer": "윤은비", "f-bank": "", "f-bankno": "", "f-hold": "소액자금본사", "f-duedate": "@thisEnd", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "5110102", "f-acct-name": "(원)지급임차료-부동산", "f-jeokyo": "{M+1}월 숙소 임차료 (삼도뷰엔빌 104동 1106호)", "f-cc": "BBW1002", "f-prg": "일반예산_비정산", "f-bikmok": "계약 외-비정산", "f-taxnm": "세금코드 없음", "f-supply": "700000", "f-vat": "0"}]}},
+  {"type": "normal", "title": "N월 숙소 임차료(우방신세계 205동 501호)", "_default": true, "fields": {"f-jptype1": "일반경비", "f-taxcode": "세금코드 없음", "f-payacct": "미지급금-일반", "f-buyer": "김형동", "f-bank": "", "f-bankno": "", "f-hold": "소액자금본사", "f-duedate": "@thisEnd", "f-dept": "BBW1003", "f-deptn": "(민간)구미코오롱폐수(증설)", "_rows": [{"f-acct-code": "5110102", "f-acct-name": "(원)지급임차료-부동산", "f-jeokyo": "{M+1}월 숙소 임차료 (우방신세계 205동 501호)", "f-cc": "BBW1003", "f-prg": "일반예산_비정산", "f-bikmok": "계약외-비정산", "f-taxnm": "세금코드 없음", "f-supply": "550000", "f-vat": "0"}]}},
+  {"type": "normal", "title": "N월 숙소 임차료_김천", "_default": true, "fields": {"f-jptype1": "일반경비", "f-taxcode": "세금코드 없음", "f-payacct": "미지급금-일반", "f-buyer": "", "f-bank": "", "f-bankno": "", "f-hold": "소액자금본사", "f-duedate": "", "f-dept": "BBW1004", "f-deptn": "(민간)김천코오롱폐수", "_rows": [{"f-acct-code": "5110102", "f-acct-name": "(원)지급임차료-부동산", "f-jeokyo": "N월 숙소 임차료_김천", "f-cc": "BBW1004", "f-prg": "일반예산_비정산", "f-bikmok": "계약 외-비정산", "f-taxnm": "세금코드 없음", "f-supply": "", "f-vat": "0"}]}},
+  {"type": "normal", "title": "김천 사무실 관리비", "_default": true, "fields": {"f-jptype1": "일반경비", "f-taxcode": "세금코드 없음", "f-payacct": "미지급금-일반", "f-buyer": "", "f-bank": "", "f-bankno": "", "f-hold": "소액자금본사", "f-duedate": "", "f-dept": "BBW1004", "f-deptn": "(민간)김천코오롱폐수", "_rows": [{"f-acct-code": "5110102", "f-acct-name": "(원)지급임차료-부동산", "f-jeokyo": "김천 사무실 관리비", "f-cc": "BBW1004", "f-prg": "일반예산_비정산", "f-bikmok": "계약 외-비정산", "f-taxnm": "세금코드 없음", "f-supply": "", "f-vat": "0"}]}},
+  {"type": "normal", "title": "숙소관리비(삼도뷰엔빌 106동 903호)", "_default": true, "fields": {"f-jptype1": "일반경비", "f-taxcode": "세금코드 없음", "f-payacct": "미지급금-일반", "f-buyer": "삼도뷰엔빌W 입주자대표회의", "f-bank": "", "f-bankno": "", "f-hold": "전도금", "f-duedate": "@nextEnd", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "5105104", "f-acct-name": "(원)복리후생비-숙소관리비", "f-jeokyo": "숙소관리비 (삼도뷰엔빌 106동 903호)", "f-cc": "BBW1002", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "세금코드 없음", "f-supply": "189230", "f-vat": "0"}]}},
+  {"type": "normal", "title": "숙소관리비(삼도뷰엔빌 104동 1106호)", "_default": true, "fields": {"f-jptype1": "일반경비", "f-taxcode": "세금코드 없음", "f-payacct": "미지급금-일반", "f-buyer": "삼도뷰엔빌W 입주자대표회의", "f-bank": "", "f-bankno": "", "f-hold": "전도금", "f-duedate": "@nextEnd", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "5105104", "f-acct-name": "(원)복리후생비-숙소관리비", "f-jeokyo": "숙소관리비 (삼도뷰엔빌 104동 1106호)", "f-cc": "BBW1002", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "세금코드 없음", "f-supply": "55070", "f-vat": "0"}]}},
+  {"type": "normal", "title": "숙소관리비(우방신세계 205동 501호)", "_default": true, "fields": {"f-jptype1": "일반경비", "f-taxcode": "세금코드 없음", "f-payacct": "미지급금-일반", "f-buyer": "우방신세계타운2단지 입주자대표회의", "f-bank": "", "f-bankno": "", "f-hold": "전도금", "f-duedate": "@nextEnd", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "5105104", "f-acct-name": "(원)복리후생비-숙소관리비", "f-jeokyo": "숙소관리비 (우방신세계 205동 501호)", "f-cc": "BBW1003", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "세금코드 없음", "f-supply": "217340", "f-vat": "0"}]}},
+  {"type": "normal", "title": "숙소관리비(동원미라클 2차 202호)", "_default": true, "fields": {"f-jptype1": "일반경비", "f-taxcode": "세금코드 없음", "f-payacct": "미지급금-일반", "f-buyer": "동원미라클2차 입주자대표회의", "f-bank": "", "f-bankno": "", "f-hold": "전도금", "f-duedate": "@nextEnd", "f-dept": "BBW1004", "f-deptn": "(민간)김천코오롱폐수", "_rows": [{"f-acct-code": "5105104", "f-acct-name": "(원)복리후생비-숙소관리비", "f-jeokyo": "숙소관리비 (동원미라클 2차 202호)", "f-cc": "BBW1004", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "세금코드 없음", "f-supply": "129800", "f-vat": "0"}]}},
+  {"type": "normal", "title": "전파사용료_구미(3개월마다)", "_default": true, "fields": {"f-jptype1": "일반경비", "f-taxcode": "세금코드 없음", "f-payacct": "미지급금-일반", "f-buyer": "서울전파관리소", "f-bank": "NH농협은행", "f-bankno": "79031925644626", "f-hold": "전도금", "f-duedate": "@nextEnd", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "5108105", "f-acct-name": "(원)통신비-전파사용료", "f-jeokyo": "전파사용료-구미", "f-cc": "BBW1002", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "세금코드 없음", "f-supply": "24000", "f-vat": "0"}]}},
+  {"type": "normal", "title": "전파사용료_김천(3개월마다)", "_default": true, "fields": {"f-jptype1": "일반경비", "f-taxcode": "세금코드 없음", "f-payacct": "미지급금-일반", "f-buyer": "대전전파관리소", "f-bank": "", "f-bankno": "", "f-hold": "전도금", "f-duedate": "@nextEnd", "f-dept": "BBW1004", "f-deptn": "(민간)김천코오롱폐수", "_rows": [{"f-acct-code": "5108105", "f-acct-name": "(원)통신비-전파사용료", "f-jeokyo": "전파사용료-김천", "f-cc": "BBW1004", "f-prg": "일반예산_비정산", "f-bikmok": "제경비-비정산", "f-taxnm": "세금코드 없음", "f-supply": "9000", "f-vat": "0"}]}},
+  {"type": "normal", "title": "통신비 지원(장유덕)", "_default": true, "fields": {"f-jptype1": "일반경비", "f-taxcode": "세금코드 없음", "f-payacct": "미지급금-종업원", "f-buyer": "장유덕", "f-bank": "", "f-bankno": "", "f-hold": "소액자금본사", "f-duedate": "@this15", "f-dept": "BBW1002", "f-deptn": "(민간)구미코오롱폐수", "_rows": [{"f-acct-code": "5108103", "f-acct-name": "(원)통신비-휴대폰사용료", "f-jeokyo": "통신비 지원", "f-cc": "BBW1002", "f-prg": "일반예산_비정산", "f-bikmok": "계약 외-비정산", "f-taxnm": "세금코드 없음", "f-supply": "50000", "f-vat": "0"}]}}
 ];
 var SAVED_FORMS=[];
 (function(){try{SAVED_FORMS=JSON.parse(localStorage.getItem('jepyo_forms')||'[]');}catch(e){SAVED_FORMS=[];}})();
@@ -958,27 +963,37 @@ function fOnCC(i){
   var list=CC_BIKMOK[cc]||[];
   bm.innerHTML='<option value="">선택</option>'+list.map(function(v){return'<option>'+v+'</option>';}).join('');
 }
+function _isNoTax(tc){return !tc||tc.indexOf('없음')>=0||tc.indexOf('(0%)')>=0||tc==='비과세';}
+function _setVal(el,v){
+  if(!el||v===undefined||v===null)return;
+  v=String(v);
+  if(el.tagName==='SELECT'&&v!==''){
+    var ok=false;for(var k=0;k<el.options.length;k++){if(el.options[k].value===v){ok=true;break;}}
+    if(!ok){var o=document.createElement('option');o.value=v;o.textContent=v;el.appendChild(o);}
+  }
+  el.value=v;
+}
 function fCalcVat(i){
-  var tc=(document.getElementById('f-taxcode')||{}).value||'';
-  var is0=!tc||tc==='없음'||tc.indexOf('(0%)')>=0;
+  var tc=(document.getElementById('f-taxnm-'+i)||{}).value||(document.getElementById('f-taxcode')||{}).value||'';
+  var is0=_isNoTax(tc);
   var vatEl=document.getElementById('f-vat-'+i);
   if(vatEl){
-    var sup=parseFloat((document.getElementById('f-supply-'+i)||{}).value)||0;
-    if(!is0&&tc){vatEl.value=Math.round(sup*.1);vatEl.readOnly=true;vatEl.style.opacity='0.6';}
+    var supRaw=(document.getElementById('f-supply-'+i)||{}).value||'',sup=parseFloat(supRaw)||0;
+    if(!is0&&tc){vatEl.value=supRaw===''?'':Math.round(sup*.1);vatEl.readOnly=true;vatEl.style.opacity='0.6';}
     else{if(vatEl.readOnly){vatEl.value='';}vatEl.readOnly=false;vatEl.style.opacity='1';}
   }
   calcTotals();
 }
 function fOnTaxCode(){
   var tc=(document.getElementById('f-taxcode')||{}).value||'';
-  var tnVal=(!tc||tc==='없음')?'비과세':tc.split('-')[0]||tc;
-  var is0=!tc||tc==='없음'||tc.indexOf('(0%)')>=0;
+  var tnVal=!tc?'':(tc.indexOf('없음')>=0?'세금코드 없음':tc);
+  var is0=_isNoTax(tc);
   for(var _ri=0;_ri<_rowCount;_ri++){
     var tn=document.getElementById('f-taxnm-'+_ri);if(tn)tn.value=tnVal;
     var vatEl=document.getElementById('f-vat-'+_ri);
     if(vatEl){
-      var sup=parseFloat((document.getElementById('f-supply-'+_ri)||{}).value)||0;
-      if(!is0&&tc){vatEl.value=Math.round(sup*.1);vatEl.readOnly=true;vatEl.style.opacity='0.6';}
+      var supRaw=(document.getElementById('f-supply-'+_ri)||{}).value||'',sup=parseFloat(supRaw)||0;
+      if(!is0&&tc){vatEl.value=supRaw===''?'':Math.round(sup*.1);vatEl.readOnly=true;vatEl.style.opacity='0.6';}
       else{if(vatEl.readOnly){vatEl.value='';}vatEl.readOnly=false;vatEl.style.opacity='1';}
     }
   }
@@ -991,7 +1006,7 @@ function fOnDept(){
 }
 var _rowCount=1;
 function addRow(){
-  var tbody=document.getElementById('f-stdtbl-tbody')||document.getElementById('f-cktbl-tbody');
+  var tbody=document.getElementById('f-stdtbl-tbody');
   if(!tbody||!window._makeRow)return;
   var i=_rowCount++;
   var tr=document.createElement('tr');
@@ -1016,11 +1031,11 @@ function fOnJpType(){
       ca.innerHTML='<option value="">선택</option><option>외상매출금-원화</option><option>미수금-원화</option><option>미수금-공동도급</option>';
     }
   }
-  if(tc&&isProg){tc.value='없음';tc.disabled=true;fOnTaxCode();}
+  if(tc&&isProg){_setVal(tc,'세금코드 없음');tc.disabled=true;fOnTaxCode();}
   else if(tc){tc.disabled=false;}
 }
 function fSaveForm(){
-  var ids=['f-date1','f-date2','f-duedate','f-expire','f-taxcode','f-buyer','f-dept','f-deptn','f-hold','f-payacct','f-jptype','f-jptype1','f-jptype2','f-ca','f-bigofield','f-jeokyo-header','f-arap-jno','f-arap-bal','f-arap-rem','f-arap-dae','f-arap-vendor','f-arap-cc','f-arap-ccn','f-arap-jeokyo','f-jd-jno','f-date3','f-jd-vendor','f-jd-supply','f-jd-cc','f-jd-ccn','f-jd-jeokyo','f-jiro-num','f-napki','f-sbn','f-jiro-issuer','f-jiro-type'];
+  var ids=['f-date1','f-date2','f-duedate','f-expire','f-taxcode','f-buyer','f-dept','f-deptn','f-hold','f-payacct','f-jptype','f-jptype1','f-jptype2','f-ca','f-issue','f-bigofield','f-jeokyo-header','f-bank','f-bankno','f-jiro-no','f-jiro-num','f-napki','f-sbn','f-jiro-issuer','f-jiro-type'];
   var fields={};
   for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el)fields[ids[i]]=el.value;}
   var rIds=['f-acct-code','f-acct-name','f-jeokyo','f-cc','f-ccn','f-prg','f-bikmok','f-taxnm','f-supply','f-vat'];
@@ -1031,6 +1046,8 @@ function fSaveForm(){
     rows.push(r);
   }
   fields._rows=rows;
+  if(document.getElementById('f-g-ar'))fields._ar=gridGet('ar');
+  if(document.getElementById('f-g-jd'))fields._jd=gridGet('jd');
   var jeokyo=(fields['f-jeokyo-header']||(rows[0]&&rows[0]['f-jeokyo'])||'').trim();
   var dt=new Date();
   var title=jeokyo||((dt.getMonth()+1)+'/'+dt.getDate()+' '+dt.getHours()+':'+(('0'+dt.getMinutes()).slice(-2)));
@@ -1057,40 +1074,124 @@ function fImportForms(){
     alert(arr.length+'건 불러왔습니다.');
   }catch(e){alert('올바른 형식이 아닙니다.');}
 }
+function _applyForm(e){
+  formType=e.type||formType;
+  if(e.kita)kitaType=e.kita;
+  renderForms();
+  fLoadFormFields(e);
+}
 function fLoadForm(idx){
   var e=SAVED_FORMS[idx];if(!e)return;
-  var needSwitch=e.type!==formType||(e.type==='kita'&&e.kita&&e.kita!==kitaType);
-  if(needSwitch){
-    formType=e.type||formType;
-    if(e.kita)kitaType=e.kita;
-    renderForms();
-    setTimeout(function(){fLoadFormFields(e);},40);
-  }else{fLoadFormFields(e);}
+  _applyForm(e);
+}
+var GRIDS={
+  ar:{keys:['dc','jno','type','acct','acctn','bal','rem','dr','cr','cc','ccn','vcode','vendor','jeokyo'],
+      cols:['대차','전표번호','전표유형','계정코드','계정명','발생액','잔액','차변액','대변액','코스트센터','코스트센터명','거래처코드','거래처명','적요'],
+      num:{bal:1,rem:1,dr:1,cr:1},sel:{dc:['대변','차변']},sum:{dr:'차변 합계',cr:'대변 합계'},def:{dc:'대변',type:'WD'}},
+  jd:{keys:['jno','dc','type','date','amt','vcode','vendor','acct','acctn','cc','ccn','jeokyo'],
+      cols:['전표번호','대차','전표유형','증빙일자','금액','거래처코드','거래처명','계정코드','계정명','코스트센터','코스트센터명','적요'],
+      num:{amt:1},sel:{dc:['H','S']},sum:{amt:'금액 합계'},def:{dc:'H',acctn:'미지급금-일반'}}
+};
+var _gridN={ar:0,jd:0};
+function gridHtml(g){
+  var G=GRIDS[g];
+  return '<div class="ftbl-wrap"><table class="ftbl"><thead><tr>'+G.cols.map(function(c){return'<th>'+c+'</th>';}).join('')+'<th></th></tr></thead><tbody id="f-g-'+g+'"></tbody></table></div>'+
+    '<div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;gap:8px;flex-wrap:wrap">'+
+    '<button onclick="gridAdd(\''+g+'\')" style="background:var(--bg3);color:var(--pt);border:1px dashed var(--pt);border-radius:6px;padding:5px 16px;font-size:11px;font-weight:700;cursor:pointer">+ 행 추가</button>'+
+    '<div id="f-g-'+g+'-sum" style="font-size:11px;color:var(--tx2);font-weight:700"></div></div>';
+}
+function gridAdd(g,vals){
+  var G=GRIDS[g],tb=document.getElementById('f-g-'+g);if(!tb)return;
+  var i=_gridN[g]++,v=vals||G.def,ist=window._rowIst,iss=window._rowIss;
+  var tr=document.createElement('tr');tr.id='f-g-'+g+'-row-'+i;
+  var h='';
+  G.keys.forEach(function(k){
+    var id='f-'+g+'-'+k+'-'+i;
+    if(G.sel[k])h+='<td class="v"><select id="'+id+'" '+iss+'>'+G.sel[k].map(function(o){return'<option>'+o+'</option>';}).join('')+'</select></td>';
+    else if(k==='cc')h+='<td class="v" style="min-width:90px"><select id="'+id+'" '+iss+' onchange="gridCC(\''+g+'\','+i+')">'+window._rowCcOpts+'</select></td>';
+    else if(k==='ccn')h+='<td style="min-width:130px"><input id="'+id+'" type="text" '+ist+' readonly></td>';
+    else if(G.num[k])h+='<td class="v" style="min-width:90px"><input id="'+id+'" type="number" '+ist+' oninput="gridSum(\''+g+'\')"></td>';
+    else h+='<td class="v" style="min-width:'+(k==='jeokyo'||k==='vendor'?180:k==='acctn'?120:70)+'px"><input id="'+id+'" type="text" '+ist+'></td>';
+  });
+  h+='<td><button onclick="gridDel(\''+g+'\','+i+')" style="background:rgba(239,68,68,0.15);color:#ef4444;border:none;border-radius:4px;padding:2px 8px;font-size:13px;cursor:pointer;font-weight:700">✕</button></td>';
+  tr.innerHTML=h;tb.appendChild(tr);
+  G.keys.forEach(function(k){if(v[k]!==undefined&&k!=='ccn')_setVal(document.getElementById('f-'+g+'-'+k+'-'+i),v[k]);});
+  gridCC(g,i);gridSum(g);
+}
+function gridDel(g,i){var tr=document.getElementById('f-g-'+g+'-row-'+i);if(tr)tr.parentNode.removeChild(tr);gridSum(g);}
+function gridCC(g,i){
+  var s=document.getElementById('f-'+g+'-cc-'+i),n=document.getElementById('f-'+g+'-ccn-'+i);
+  if(s&&n)n.value=CC_MAP[s.value]||'';
+}
+function gridGet(g){
+  var G=GRIDS[g],out=[];
+  for(var i=0;i<_gridN[g];i++){
+    if(!document.getElementById('f-g-'+g+'-row-'+i))continue;
+    var r={};G.keys.forEach(function(k){var el=document.getElementById('f-'+g+'-'+k+'-'+i);if(el)r[k]=el.value;});
+    out.push(r);
+  }
+  return out;
+}
+function gridSet(g,rows){
+  var tb=document.getElementById('f-g-'+g);if(!tb)return;
+  tb.innerHTML='';_gridN[g]=0;
+  (rows&&rows.length?rows:[GRIDS[g].def]).forEach(function(r){gridAdd(g,r);});
+}
+function gridSum(g){
+  var G=GRIDS[g],el=document.getElementById('f-g-'+g+'-sum');if(!el)return;
+  var rows=gridGet(g),parts=[];
+  for(var k in G.sum){
+    var t=rows.reduce(function(a,r){return a+(parseFloat(r[k])||0);},0);
+    parts.push(G.sum[k]+': '+t.toLocaleString('ko-KR'));
+  }
+  el.textContent=parts.join('  ·  ');
 }
 function fLoadFormFields(e){
   var fields=e.fields||{};
-  for(var id in fields){if(id==='_rows')continue;var el=document.getElementById(id);if(el)el.value=fields[id];}
+  for(var id in fields){if(id.charAt(0)==='_')continue;_setVal(document.getElementById(id),fields[id]);}
   var rows=fields._rows;
-  // backward compat: old saves had flat f-supply, f-cc etc
   if(!rows){
     var oldKeys=['f-acct-code','f-acct-name','f-jeokyo','f-cc','f-ccn','f-prg','f-bikmok','f-taxnm','f-supply','f-vat'];
     var r0={};var hasAny=false;
     for(var ok=0;ok<oldKeys.length;ok++){if(fields[oldKeys[ok]]!==undefined){r0[oldKeys[ok]]=fields[oldKeys[ok]];hasAny=true;}}
     rows=hasAny?[r0]:[];
   }
-  while(_rowCount<rows.length)addRow();
-  var rIds=['f-acct-code','f-acct-name','f-jeokyo','f-cc','f-ccn','f-prg','f-bikmok','f-taxnm','f-supply','f-vat'];
-  for(var ri=0;ri<rows.length;ri++){
-    var r=rows[ri];
-    for(var j=0;j<rIds.length;j++){var el=document.getElementById(rIds[j]+'-'+ri);if(el&&r[rIds[j]]!==undefined)el.value=r[rIds[j]];}
-    var inp=document.getElementById('f-acct-in-'+ri);
-    var code=document.getElementById('f-acct-code-'+ri);
-    var nm=document.getElementById('f-acct-name-'+ri);
-    if(inp&&code&&code.value)inp.value=code.value+(nm&&nm.value?' | '+nm.value:'');
-    fOnCC(ri);
-    var bm=document.getElementById('f-bikmok-'+ri);if(bm&&r['f-bikmok']!==undefined)bm.value=r['f-bikmok'];
+  if(document.getElementById('f-row-0')){
+    while(_rowCount<rows.length)addRow();
+    var rIds=['f-acct-code','f-acct-name','f-jeokyo','f-cc','f-prg','f-supply'];
+    for(var ri=0;ri<rows.length;ri++){
+      var r=rows[ri];
+      for(var j=0;j<rIds.length;j++)_setVal(document.getElementById(rIds[j]+'-'+ri),r[rIds[j]]);
+      var inp=document.getElementById('f-acct-in-'+ri);
+      var code=document.getElementById('f-acct-code-'+ri);
+      var nm=document.getElementById('f-acct-name-'+ri);
+      if(inp&&code&&code.value)inp.value=code.value+(nm&&nm.value?' | '+nm.value:'');
+      fOnCC(ri);
+      _setVal(document.getElementById('f-bikmok-'+ri),r['f-bikmok']);
+    }
+    fOnDept();
+    if(document.getElementById('f-jptype'))fOnJpType();
+    fOnTaxCode();
+    for(var ri2=0;ri2<rows.length;ri2++){
+      var r2=rows[ri2],tn=document.getElementById('f-taxnm-'+ri2),vt=document.getElementById('f-vat-'+ri2);
+      if(tn&&r2['f-taxnm'])tn.value=r2['f-taxnm'];
+      if(vt&&r2['f-vat']!==undefined&&r2['f-vat']!=='')vt.value=r2['f-vat'];
+      if(vt&&tn&&_isNoTax(tn.value)){vt.readOnly=false;vt.style.opacity='1';}
+    }
+    calcTotals();
+  }else{fOnDept();}
+  if(document.getElementById('f-g-ar')){
+    var ar=fields._ar;
+    if(!ar&&(fields['f-arap-cc']||fields['f-arap-jno']||fields['f-arap-dae']))
+      ar=[{dc:'대변',jno:fields['f-arap-jno'],type:'ZM',bal:fields['f-arap-bal'],rem:fields['f-arap-rem'],cr:fields['f-arap-dae'],cc:fields['f-arap-cc'],vendor:fields['f-arap-vendor'],jeokyo:fields['f-arap-jeokyo']}];
+    gridSet('ar',ar);
   }
-  fOnTaxCode();fOnDept();
+  if(document.getElementById('f-g-jd')){
+    var jd=fields._jd;
+    if(!jd&&(fields['f-jd-cc']||fields['f-jd-jno']||fields['f-jd-supply']))
+      jd=[{jno:fields['f-jd-jno'],dc:'H',date:fields['f-date3'],amt:fields['f-jd-supply'],vendor:fields['f-jd-vendor'],acctn:'미지급금-일반',cc:fields['f-jd-cc'],jeokyo:fields['f-jd-jeokyo']}];
+    gridSet('jd',jd);
+  }
 }
 function fDeleteForm(idx){
   if(!confirm('삭제할까요?'))return;
@@ -1106,15 +1207,22 @@ function autoFillDueDate(){
     el.value=last.getFullYear()+'-'+pad2(last.getMonth()+1)+'-'+pad2(last.getDate());
   }
 }
+// 기본양식 토큰: {M}/{M-1}/{M+1} → 처리월 기준 월, @prevEnd 등 → 처리일 기준 날짜
+function _tplResolve(v,now){
+  if(typeof v==='string'){
+    var y=now.getFullYear(),m=now.getMonth();
+    var D={'@prevEnd':[0,0],'@thisFirst':[0,1],'@this15':[0,15],'@this20':[0,20],'@thisEnd':[1,0],'@next15':[1,15],'@next20':[1,20],'@nextEnd':[2,0],'@next3End':[4,0]};
+    if(D[v]){var d=new Date(y,m+D[v][0],D[v][1]);return d.getFullYear()+'-'+pad2(d.getMonth()+1)+'-'+pad2(d.getDate());}
+    return v.replace(/\{M([+-]\d)?\}/g,function(_,o){return String(new Date(y,m+(o?parseInt(o,10):0),1).getMonth()+1);});
+  }
+  if(Array.isArray(v))return v.map(function(x){return _tplResolve(x,now);});
+  if(v&&typeof v==='object'){var o={};for(var k in v)o[k]=_tplResolve(v[k],now);return o;}
+  return v;
+}
 function fLoadDefault(idx){
   var e=DEFAULT_FORMS[idx];if(!e)return;
-  var needSwitch=e.type!==formType||(e.type==='kita'&&e.kita&&e.kita!==kitaType);
-  if(needSwitch){
-    formType=e.type;
-    if(e.kita)kitaType=e.kita;
-    renderForms();
-    setTimeout(function(){fLoadFormFields(e);autoFillDueDate();},40);
-  }else{fLoadFormFields(e);autoFillDueDate();}
+  _applyForm(_tplResolve(e,new Date()));
+  autoFillDueDate();
 }
 function renderSavedList(q){
   var el=document.getElementById('f-saved-list');if(!el)return;
@@ -1209,10 +1317,10 @@ function renderForms(){
   var payAcctOpts='<option value="">선택</option><option>미지급금-일반</option><option>미지급금-종업원</option><option>외상매입금-일반</option>';
   var holdOpts='<option value="">없음</option><option>전도금</option><option>지급제외</option><option>소액자금본사</option>';
   var deptOpts='<option value="">선택</option><option value="BBW1002">BBW1002</option><option value="BBW1003">BBW1003</option><option value="BBW1004">BBW1004</option>';
-  var tcNormal='<option value="">선택</option><option value="없음">세금코드 없음</option><option value="VG매입-현금영수증">VG매입 - 현금영수증</option>';
-  var tcSilmool='<option value="">선택</option><option>VI매입-세금계산서-지로-전자증빙(10%)</option><option>VI매입-세금계산서-일반-실물(10%)</option><option>VA매입-세금계산서-일반-실물(10%)</option><option>Y1매입-계산서-실물(0%)</option><option>YE매입-세금계산서-불공제-소형승용차-실물(10%)</option><option>YC매입-세금계산서-불공제-접대비-실물(10%)</option><option>YA매입-세금계산서-불공제-업무무관-실물(10%)</option><option>YG매입-세금계산서-불공제-면세사업-실물(10%)</option><option value="없음">세금코드 없음</option>';
-  var tcTax='<option value="">선택</option><option value="없음">없음</option><option value="10%">10%</option>';
-  var tcCk='<option value="">선택</option><option>AA매출-세금계산서-전자증빙(10%)</option><option>B1매출-계산서-전자증빙(0%)</option><option>CA매출-세금계산서-고철매각(10%)</option><option>AE매출-현금영수증(10%)</option><option>AI매출-현금영수증-면제(0%)</option><option value="없음">세금코드 없음</option>';
+  var TC_P=['세금코드 없음','VB 매입-세금계산서-일반-전자증빙 (10%)','VI 매입-세금계산서-지로-전자증빙 (10%)','VG매입-현금영수증','VI매입-세금계산서-일반-실물(10%)','VA매입-세금계산서-일반-실물(10%)','Y1매입-계산서-실물(0%)','YE매입-세금계산서-불공제-소형승용차-실물(10%)','YC매입-세금계산서-불공제-접대비-실물(10%)','YA매입-세금계산서-불공제-업무무관-실물(10%)','YG매입-세금계산서-불공제-면세사업-실물(10%)'];
+  var TC_S=['AA 매출-세금계산서-전자증빙 (10%)','B1매출-계산서-전자증빙(0%)','CA매출-세금계산서-고철매각(10%)','AE매출-현금영수증(10%)','AI매출-현금영수증-면제(0%)','세금코드 없음'];
+  var opt=function(a){return'<option value="">선택</option>'+a.map(function(v){return'<option>'+v+'</option>';}).join('');};
+  var tcPurch=opt(TC_P),tcCk=opt(TC_S);
   var caOpts='<option value="">선택</option><option>외상매출금-원화</option><option>미수금-원화</option><option>미수금-공동도급</option>';
   var totals=FG([IS('총금액','f-total','',2),IS('총공급가액','f-supply-total','',2),IS('총부가세액','f-vat-total','',2)]);
   var deptBlock=FG([SS('귀속부서','f-dept',deptOpts,'fOnDept()'),IS('귀속부서명','f-deptn','',2),IS('','','',0)]);
@@ -1230,127 +1338,82 @@ function renderForms(){
       '<td style="min-width:120px"><input id="f-ccn-'+i+'" type="text" '+_i+' readonly></td>'+
       '<td class="v" style="min-width:110px"><select id="f-prg-'+i+'" '+_s+'>'+_p+'</select></td>'+
       '<td class="v" style="min-width:120px"><select id="f-bikmok-'+i+'" '+_s+'><option value="">CC 선택 후...</option></select></td>'+
-      '<td style="min-width:55px"><input id="f-taxnm-'+i+'" type="text" '+_i+' readonly></td>'+
+      '<td style="min-width:170px"><input id="f-taxnm-'+i+'" type="text" '+_i+' readonly></td>'+
       '<td style="min-width:80px"><input id="f-supply-'+i+'" type="number" placeholder="공급가액" '+_i+' oninput="fCalcVat('+i+')"></td>'+
       '<td style="min-width:70px"><input id="f-vat-'+i+'" type="number" placeholder="부가세" '+_i+'></td>'+
-      '<td><button onclick="delRow('+i+')" style="background:rgba(239,68,68,0.15);color:#ef4444;border:none;border-radius:4px;padding:2px 8px;font-size:13px;cursor:pointer;font-weight:700">✕</button></td>';
-  };
-  window._makeCkRow=function(i){
-    var _i=ist,_s=iss,_c=ccOpts,_p=prgOpts;
-    return '<td class="v" style="min-width:160px">'+
-      '<input id="f-acct-in-'+i+'" type="text" placeholder="계정 코드/이름 검색..." style="width:100%;border:none;border-bottom:1px dashed var(--pt);background:var(--bg3);color:var(--tx);font-size:11px;font-weight:700;font-family:inherit;outline:none;padding:3px 4px;border-radius:4px" oninput="fAcctSearch(this.value,'+i+')" autocomplete="off">'+
-      '<div style="display:flex;gap:3px;margin-top:4px">'+
-      '<input id="f-acct-code-'+i+'" type="text" placeholder="코드" style="width:44%;border:none;border-bottom:1px dashed var(--pt);background:transparent;font-size:10px;color:var(--pt);font-family:monospace;outline:none;padding:1px 0;font-weight:700" readonly>'+
-      '<input id="f-acct-name-'+i+'" type="text" placeholder="계정명" style="width:56%;border:none;border-bottom:1px dashed var(--pt);background:transparent;font-size:10px;color:var(--tx);font-family:inherit;outline:none;padding:1px 0;font-weight:700" readonly>'+
-      '</div></td>'+
-      '<td style="min-width:80px"><input id="f-jeokyo-'+i+'" type="text" placeholder="적요 입력" '+_i+'></td>'+
-      '<td class="v" style="min-width:90px"><select id="f-cc-'+i+'" '+_s+' onchange="fOnCC('+i+')">'+_c+'</select></td>'+
-      '<td style="min-width:120px"><input id="f-ccn-'+i+'" type="text" '+_i+' readonly></td>'+
-      '<td class="v" style="min-width:110px"><select id="f-prg-'+i+'" '+_s+'>'+_p+'</select></td>'+
-      '<td class="v" style="min-width:120px"><select id="f-bikmok-'+i+'" '+_s+'><option value="">CC 선택 후...</option></select></td>'+
-      '<td style="min-width:80px"><input id="f-supply-'+i+'" type="number" placeholder="공급가액" '+_i+' oninput="calcTotals()"></td>'+
-      '<td>0</td>'+
       '<td><button onclick="delRow('+i+')" style="background:rgba(239,68,68,0.15);color:#ef4444;border:none;border-radius:4px;padding:2px 8px;font-size:13px;cursor:pointer;font-weight:700">✕</button></td>';
   };
   var STD_COLS=['계정코드/계정명','적요','코스트센터 코드','코스트센터명','예산PRG','계약비목','세금코드명','공급가액','부가세액',''];
   var stdTbl='<div class="ftbl-wrap"><table class="ftbl"><thead><tr>'+STD_COLS.map(function(c){return'<th>'+c+'</th>';}).join('')+'</tr></thead><tbody id="f-stdtbl-tbody"><tr id="f-row-0">'+window._makeRow(0)+'</tr></tbody></table></div>'+
     '<button onclick="addRow()" style="margin-top:8px;background:var(--bg3);color:var(--pt);border:1px dashed var(--pt);border-radius:6px;padding:5px 16px;font-size:11px;font-weight:700;cursor:pointer">+ 행 추가</button>';
-  var CK_COLS=['계정코드/계정명','적요','코스트센터 코드','코스트센터명','예산PRG','계약비목','공급가액','부가세액',''];
-  var ckTbl='<div class="ftbl-wrap"><table class="ftbl"><thead><tr>'+CK_COLS.map(function(c){return'<th>'+c+'</th>';}).join('')+'</tr></thead><tbody id="f-cktbl-tbody"><tr id="f-row-0">'+window._makeCkRow(0)+'</tr></tbody></table></div>'+
-    '<button onclick="addRow()" style="margin-top:8px;background:var(--bg3);color:var(--pt);border:1px dashed var(--pt);border-radius:6px;padding:5px 16px;font-size:11px;font-weight:700;cursor:pointer">+ 행 추가</button>';
 
   // --- HEADERS ---
   var DESC='<div style="font-size:10px;color:var(--tx3);margin-bottom:6px">';
   var hdr={};
+  var bankRow=FG([IS('구매처','f-buyer','',0),IS('은행명','f-bank','',0),IS('계좌번호','f-bankno','',0)]);
   hdr.normal=
     DESC+'주로 숙소임차료, 숙소관리비, 통신비지원금 등 작성 시 사용</div>'+
-    FG([SS('전표구분','f-jptype1','<option value="">선택</option><option>일반 경비</option><option>선급금 신청</option>',''),DF('전기일자','f-date1'),DF('증빙일자','f-date2')])+
+    FG([SS('전표구분','f-jptype1','<option value="">선택</option><option>일반경비</option><option>선급금 신청</option>',''),DF('전기일자','f-date1'),DF('증빙일자','f-date2')])+
     totals+
-    FG([SS('세금코드','f-taxcode',tcNormal,'fOnTaxCode()'),SS('지급계정','f-payacct',payAcctOpts,''),IS('부가세사업장','','리뉴어스 주식회사(1231)',1)])+
-    FG([IS('구매처','f-buyer','',0),IS('','','',0),IS('','','',0)])+
+    FG([SS('세금코드','f-taxcode',tcPurch,'fOnTaxCode()'),SS('지급계정','f-payacct',payAcctOpts,''),IS('부가세사업장','','리뉴어스 주식회사(1231)',1)])+
+    bankRow+
     FG([SS('지급보류','f-hold',holdOpts,''),DF('지급예정일','f-duedate'),IS('','','',0)])+
     deptBlock;
   hdr.silmool=
     DESC+'주로 김천 인터넷 사용료, 숙소가스비(우방신세계), 숙소전기료(동원미라클)</div>'+
     FG([SS('전표구분','f-jptype2','<option value="">선택</option><option>일반매입</option><option>선급금 신청</option>',''),DF('전기일자','f-date1'),DF('증빙일자','f-date2')])+
     totals+
-    FG([SS('세금코드','f-taxcode',tcSilmool,'fOnTaxCode()'),SS('지급계정','f-payacct',payAcctOpts,''),IS('부가세사업장','','리뉴어스 주식회사(1231)',1)])+
-    FG([IS('구매처','f-buyer','',0),IS('','','',0),IS('','','',0)])+
-    FG([SS('지급보류','f-hold',holdOpts,''),DF('지급예정일','f-duedate'),IS('','','',0)]);
+    FG([SS('세금코드','f-taxcode',tcPurch,'fOnTaxCode()'),SS('지급계정','f-payacct',payAcctOpts,''),IS('부가세사업장','','리뉴어스 주식회사(1231)',1)])+
+    bankRow+
+    FG([SS('지급보류','f-hold',holdOpts,''),DF('지급예정일','f-duedate'),IS('','','',0)])+
+    deptBlock;
   hdr.tax=
     FG([IS('전표구분','','일반매입',1),DF('전기일자','f-date1'),DF('증빙일자','f-date2')])+
     totals+
-    FG([SS('세금코드','f-taxcode',tcTax,'fOnTaxCode()'),IS('지급계정','','미지급금-일반',1),IS('부가세사업장','','리뉴어스 주식회사(1231)',1)])+
-    FG([IS('구매처','f-buyer','',0),IS('','','',0),IS('','','',0)])+
+    FG([SS('세금코드','f-taxcode',tcPurch,'fOnTaxCode()'),IS('지급계정','','미지급금-일반',1),IS('부가세사업장','','리뉴어스 주식회사(1231)',1)])+
+    FG([IS('구매처','f-buyer','',0),IS('구매처 사업자번호','f-sbn','',0),SS('지급보류','f-hold',holdOpts,'')])+
+    FG([IS('은행명','f-bank','',0),IS('계좌번호','f-bankno','',0),DF('지급예정일','f-duedate')])+
     deptBlock;
   hdr.jiro=
     FG([IS('전표번호유형','','전자지로',1),DF('전기일자','f-date1'),DF('증빙일자','f-date2')])+
     totals+
-    FG([IS('전자납부번호','f-jiro-num','',0),IS('납기일자','f-napki','',0),IS('구매처 사업자번호','f-sbn','',0)])+
-    FG([IS('지로발급기관','f-jiro-issuer','',0),IS('지로유형','f-jiro-type','전화/전기/TV',0),IS('','','',0)])+
-    FG([SS('세금코드','f-taxcode',tcTax,'fOnTaxCode()'),IS('지급계정','','미지급금-일반',1),IS('부가세사업장','','리뉴어스 주식회사(1231)',1)])+
-    FG([IS('구매처','f-buyer','',0),IS('지급조건','','지정일 지급',1),DF('지급예정일','f-duedate')]);
+    FG([IS('구매처 사업자번호','f-sbn','',0),IS('지로번호','f-jiro-no','',0),IS('전자납부번호','f-jiro-num','',0)])+
+    FG([IS('지로발급기관','f-jiro-issuer','',0),IS('지로유형','f-jiro-type','전화/전기/TV',0),DF('납기일자','f-napki')])+
+    FG([SS('세금코드','f-taxcode',tcPurch,'fOnTaxCode()'),IS('지급계정','','미지급금-일반',1),IS('부가세사업장','','리뉴어스 주식회사(1231)',1)])+
+    FG([IS('구매처','f-buyer','',0),IS('지급조건','','지정일 지급',1),DF('지급예정일','f-duedate')])+
+    deptBlock;
   hdr.chaekwon=
     DESC+'주로 utility 진행매출 작성, 위탁비 청구 시 사용</div>'+
     FG([SS('전표유형','f-jptype','<option value="">선택</option><option>일반매출</option><option>진행매출</option><option>선수금</option>','fOnJpType()'),DF('전기일자','f-date1'),DF('증빙일자','f-date2')])+
     totals+
     FG([SS('세금코드','f-taxcode',tcCk,'fOnTaxCode()'),
         '<div class="ff"><div class="ff-lbl">차변계정</div><select class="ff-inp" id="f-ca" style="-webkit-appearance:none">'+caOpts+'</select></div>',
-        IS('고객사','f-buyer','',0)])+
-    FG([IS('','','',0),DF('만기일','f-expire'),IS('','','',0)])+
+        IS('부가세사업장','','리뉴어스 주식회사(1231)',1)])+
+    FG([IS('고객사','f-buyer','',0),SS('세금계산서 발행여부','f-issue','<option value="">선택</option><option>발행</option><option>미발행</option>',''),DF('만기일','f-expire')])+
+    FG([IS('비고','f-bigofield','',0),IS('','','',0),IS('','','',0)])+
     deptBlock;
 
   // --- 기타전표 sub-types ---
-  var ist2=ist;var iss2=iss;
   var kitaTabs='<div style="display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap">';
   [{k:'gl',l:'GL계정대체'},{k:'arap',l:'AR/AP반제'},{k:'jeondo',l:'전도금 입금/정산'}].forEach(function(t){
     var on=kitaType===t.k;
     kitaTabs+='<button onclick="switchKita(\''+t.k+'\')" style="padding:6px 14px;font-size:11px;border-radius:8px;border:none;cursor:pointer;background:'+(on?'var(--pt)':'var(--bg3)')+';color:'+(on?'#18181b':'var(--tx)')+';font-weight:'+(on?700:400)+'">'+t.l+'</button>';
   });
   kitaTabs+='</div>';
-  var acctW2='<input id="f-acct-in-0" type="text" placeholder="계정 검색..." style="width:100%;border:none;border-bottom:1px dashed var(--pt);background:var(--bg3);color:var(--tx);font-size:11px;font-weight:700;font-family:inherit;outline:none;padding:3px 4px;border-radius:4px" oninput="fAcctSearch(this.value,0)" autocomplete="off">'+
-    '<input id="f-acct-code-0" type="text" placeholder="코드" style="width:100%;border:none;border-bottom:1px dashed var(--pt);background:transparent;font-size:10px;color:var(--pt);font-family:monospace;outline:none;padding:1px 0;margin-top:4px;font-weight:700" readonly>';
-  var arapRow='<tr><td>대변</td>'+
-    '<td class="v"><input id="f-arap-jno" type="text" placeholder="전표번호" '+ist2+'></td>'+
-    '<td>ZM</td>'+
-    '<td class="v" style="min-width:130px;position:relative">'+acctW2+'</td>'+
-    '<td><input id="f-acct-name-0" type="text" placeholder="계정명" '+ist2+' readonly></td>'+
-    '<td class="v"><input id="f-arap-bal" type="number" placeholder="발생액" '+ist2+'></td>'+
-    '<td class="v"><input id="f-arap-rem" type="number" placeholder="잔액" '+ist2+'></td>'+
-    '<td>0</td>'+
-    '<td class="v"><input id="f-arap-dae" type="number" placeholder="대변액" '+ist2+'></td>'+
-    '<td class="v"><select id="f-arap-cc" '+iss2+' onchange="(function(){var s=document.getElementById(\'f-arap-cc\');var n=document.getElementById(\'f-arap-ccn\');if(n)n.value=CC_MAP[s.value]||\'\'})()">'+ccOpts+'</select></td>'+
-    '<td><input id="f-arap-ccn" type="text" '+ist2+' readonly></td>'+
-    '<td><input id="f-arap-vendor" type="text" placeholder="거래처명" '+ist2+'></td>'+
-    '<td><input id="f-arap-jeokyo" type="text" placeholder="적요" '+ist2+'></td>'+
-  '</tr>';
-  var ARAP_COLS=['대차','전표번호','전표유형','계정코드','계정명','발생액','잔액','차변액','대변액','코스트센터 코드','코스트센터명','거래처명','적요'];
+  var kDept=FG([SS('귀속부서','f-dept',deptOpts,'fOnDept()'),IS('귀속부서명','f-deptn','',2),IS('전표번호','','(자동발급)',1)]);
   var arapContent='<div class="form-sec">● 기본정보</div>'+
-    FG([DF('증빙일자','f-date1'),DF('전기일자','f-date2'),IS('귀속부서','f-dept','',0)])+
-    FG([IS('적요','f-jeokyo-header','',0),IS('전표번호','','(자동발급)',1),IS('','','',0)])+
-    '<div class="form-sec">● 반제내역</div>'+
-    '<div class="ftbl-wrap"><table class="ftbl"><thead><tr>'+ARAP_COLS.map(function(c){return'<th>'+c+'</th>';}).join('')+'</tr></thead><tbody>'+arapRow+'</tbody></table></div>';
-  var jdRow='<tr>'+
-    '<td class="v"><input id="f-jd-jno" type="text" placeholder="전표번호" '+ist2+'></td>'+
-    '<td>H</td><td>W1/W3</td>'+
-    '<td class="v"><input id="f-date3" type="text" placeholder="증빙일자" '+ist2+'></td>'+
-    '<td class="v"><input id="f-jd-supply" type="number" placeholder="금액" '+ist2+'></td>'+
-    '<td class="v"><input id="f-jd-vendor" type="text" placeholder="거래처명" '+ist2+'></td>'+
-    '<td>미지급금-일반</td>'+
-    '<td class="v"><select id="f-jd-cc" '+iss2+' onchange="(function(){var s=document.getElementById(\'f-jd-cc\');var n=document.getElementById(\'f-jd-ccn\');if(n)n.value=CC_MAP[s.value]||\'\'})()">'+ccOpts+'</select></td>'+
-    '<td><input id="f-jd-ccn" type="text" '+ist2+' readonly></td>'+
-    '<td><input id="f-jd-jeokyo" type="text" placeholder="적요" '+ist2+'></td>'+
-  '</tr>';
-  var JD_COLS=['전표번호','대차','전표유형','증빙일자','금액','거래처명','계정명','코스트센터 코드','코스트센터명','적요'];
+    FG([DF('증빙일자','f-date1'),DF('전기일자','f-date2'),IS('적요','f-jeokyo-header','',0)])+
+    kDept+
+    '<div class="form-sec">● 반제내역</div>'+gridHtml('ar');
   var jeondoContent='<div class="form-sec">● 기본정보</div>'+
-    FG([DF('증빙일자','f-date1'),DF('전기일자','f-date2'),IS('귀속부서','f-dept','',0)])+
-    FG([IS('통화','','KRW',1),IS('지급계정','','보통예금-전도금',1),IS('적요','f-jeokyo-header','',0)])+
-    '<div class="form-sec">● 반제대상 미결내역</div>'+
-    '<div class="ftbl-wrap"><table class="ftbl"><thead><tr>'+JD_COLS.map(function(c){return'<th>'+c+'</th>';}).join('')+'</tr></thead><tbody>'+jdRow+'</tbody></table></div>';
+    FG([DF('증빙일자','f-date1'),DF('전기일자','f-date2'),IS('적요','f-jeokyo-header','',0)])+
+    FG([IS('통화','','KRW',1),IS('지급계정','','보통예금-전도금',1),IS('','','',0)])+
+    kDept+
+    '<div class="form-sec">● 반제대상 미결내역</div>'+gridHtml('jd');
   var glContent='<div style="padding:32px;text-align:center;color:var(--tx3);font-size:13px;border:2px dashed var(--br);border-radius:10px;margin:12px 0">GL계정대체전표<br>추후 업데이트 예정</div>';
   var kitaBody=kitaTabs+(kitaType==='gl'?glContent:kitaType==='arap'?arapContent:jeondoContent);
 
-  var FBODY={tax:hdr.tax+stdTbl,normal:hdr.normal+stdTbl,jiro:hdr.jiro+stdTbl,silmool:hdr.silmool+stdTbl,chaekwon:hdr.chaekwon+ckTbl,kita:kitaBody};
+  var FBODY={tax:hdr.tax+stdTbl,normal:hdr.normal+stdTbl,jiro:hdr.jiro+stdTbl,silmool:hdr.silmool+stdTbl,chaekwon:hdr.chaekwon+stdTbl,kita:kitaBody};
   var FNAMES={tax:'전자세금계산서전표',normal:'일반전표',jiro:'지로전표',silmool:'실물 세금계산서전표',chaekwon:'채권전표',kita:'기타전표'};
   var tabs=[{k:'tax',l:'세금계산서'},{k:'normal',l:'일반전표'},{k:'jiro',l:'지로'},{k:'silmool',l:'실물계산서'},{k:'chaekwon',l:'채권전표'},{k:'kita',l:'기타전표'}];
 
@@ -1374,6 +1437,8 @@ function renderForms(){
   h+='</div>';
   h+='</div>';
   el.innerHTML=h;
+  if(document.getElementById('f-g-ar'))gridSet('ar');
+  if(document.getElementById('f-g-jd'))gridSet('jd');
   renderSavedList('');
 }
 
