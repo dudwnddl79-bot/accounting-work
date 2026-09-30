@@ -85,6 +85,21 @@ git push -u origin claude/remove-names-images-e3h4yn
 # 충돌 시: git fetch origin main && git rebase origin/main && git push --force-with-lease
 ```
 
+### 5. Netlify 배포 확인 / 직접 배포 (로컬 Claude Code에서)
+- 저장소 이름 변경됨: `dudwnddl79-bot/accounting-work` (예전 `accouting-work`). 로컬 remote가 예전 주소면 `git remote set-url origin https://github.com/dudwnddl79-bot/accounting-work`
+- Netlify 사이트명 `accounting-work` (GitHub 연동, main push 시 자동 배포). 운영 주소: https://accounting-work.netlify.app
+- 클라우드 세션은 Netlify 접속이 차단돼 있어 배포 확인 불가 → 로컬에서 수행. **사용자가 OK 한 뒤에만 실행**
+```bash
+git fetch origin main && git log -1 --oneline origin/main          # 배포 대상 커밋
+npx netlify-cli login                                               # 브라우저 로그인 (최초 1회)
+npx netlify-cli api listSites --data '{"name":"accounting-work"}'  # site_id 확인
+npx netlify-cli api listSiteDeploys --data '{"site_id":"<site_id>"}' | head -40   # 최신 production 배포의 commit_ref가 origin/main과 같은지
+# 다르거나 실패했으면 main 최신본으로 직접 운영 배포:
+git checkout main && git pull && npx netlify-cli deploy --prod --dir . --site <site_id>
+# 반영 확인 (페이지 소스에 최신 기본양식이 있는지)
+curl -s https://accounting-work.netlify.app/ | grep -c "N월 입금채권반제(위탁비)"   # 1 이상이면 반영됨
+```
+
 ---
 
 ## 현장 코드
