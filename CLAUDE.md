@@ -20,13 +20,19 @@
 - `img`: `/images/` 폴더 기준 파일명 (SUMMARY_BASE = GitHub Pages URL)
 - `chk`: "정산" = 초록, "비정산" = 빨강, 그 외 = 회색
 
-### DEFAULT_FORMS (line ~777)
-전표입력 탭 양식 템플릿. 57개 항목.
+### DEFAULT_FORMS
+전표양식 탭 기본 양식 58개. 2026년 8~9월 SAP 전표 캡처 기준으로 값 채움.
 ```js
-{type:'tax|normal|jiro|silmool|chaekwon|kita', kita:'arap|jeondo|gl', title:'표시명', _default:true, fields:{...}}
+{type:'tax|normal|jiro|silmool|chaekwon|kita', kita:'arap|jeondo', title:'표시명', _default:true,
+ fields:{'f-...':값, _rows:[행...], _ar:[AR/AP 반제행...], _jd:[전도금 미결행...]}}
 ```
 - `f-dept`: 현장코드 (BBW1002=구미, BBW1003=구미증설, BBW1004=김천)
-- `f-bikmok`: 계약비목 — CC_BIKMOK 룩업 후 select로 표시됨
+- `f-bikmok`: CC_BIKMOK[cc] 목록 값과 글자 그대로 일치해야 함 (BBW1003은 `계약외-비정산`, 나머지는 `계약 외-비정산`)
+- 세금코드는 SAP 표기 그대로 (`VB 매입-세금계산서-일반-전자증빙 (10%)` 등). select에 없는 값도 `_setVal`이 옵션을 추가해 표시
+- 행별 `f-taxnm`이 헤더와 다르면(예: 전기료 2행 `세금코드 없음`) 행 값 유지
+- 불러올 때 토큰 치환 (`_tplResolve`): `{M}`/`{M-1}`/`{M+1}` → 처리월 기준 월, `@prevEnd @thisFirst @this15 @this20 @thisEnd @next15 @next20 @nextEnd @next3End` → 날짜
+- 개인 계좌번호는 넣지 않음 (공개 저장소)
+- 수정 후 검증: Playwright로 모든 양식 `fLoadDefault(i)` → 필드값 비교 (잠금화면은 `sessionStorage._auth_ok='1'`로 통과)
 
 ### CC_BIKMOK (line ~730)
 계약비목 드롭다운 옵션. CC코드별로 다름.
